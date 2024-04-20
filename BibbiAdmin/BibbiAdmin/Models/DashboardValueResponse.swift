@@ -10,10 +10,10 @@ import Foundation
 struct DashboardValueResponse: Decodable {
     enum CodingKeys: String, CodingKey {
         case count
-        case gepBetweenYesturday
-        case percentBetweenYesturday
+        case gapBetweenYesterday
+        case percentBetweenYesterday
     }
     var count: Int
-    var gepBetweenYesturday: Int
-    var percentBetweenYesturday: Double
+    var gapBetweenYesterday: Int
+    var percentBetweenYesterday: Double
 }

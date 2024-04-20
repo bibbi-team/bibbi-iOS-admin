@@ -29,7 +29,6 @@
 		9E728AAE2BD393AF0045FF15 /* DashboardValueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AAD2BD393AF0045FF15 /* DashboardValueResponse.swift */; };
 		9E728AB02BD393BE0045FF15 /* DashboardDistributionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AAF2BD393BE0045FF15 /* DashboardDistributionResponse.swift */; };
 		9E728AB22BD395C30045FF15 /* AdminDailyDashboardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AB12BD395C30045FF15 /* AdminDailyDashboardResponse.swift */; };
-		9E728AB42BD395FE0045FF15 /* DailyValueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AB32BD395FE0045FF15 /* DailyValueResponse.swift */; };
 		9E728AB62BD3AD9E0045FF15 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AB52BD3AD9E0045FF15 /* Date+Ext.swift */; };
 		9E728AB82BD3B6B20045FF15 /* Publisher+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AB72BD3B6B20045FF15 /* Publisher+Ext.swift */; };
 /* End PBXBuildFile section */
@@ -58,7 +57,6 @@
 		9E728AAD2BD393AF0045FF15 /* DashboardValueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardValueResponse.swift; sourceTree = "<group>"; };
 		9E728AAF2BD393BE0045FF15 /* DashboardDistributionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardDistributionResponse.swift; sourceTree = "<group>"; };
 		9E728AB12BD395C30045FF15 /* AdminDailyDashboardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDailyDashboardResponse.swift; sourceTree = "<group>"; };
-		9E728AB32BD395FE0045FF15 /* DailyValueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyValueResponse.swift; sourceTree = "<group>"; };
 		9E728AB52BD3AD9E0045FF15 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		9E728AB72BD3B6B20045FF15 /* Publisher+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,7 +143,6 @@
 				9E728AAD2BD393AF0045FF15 /* DashboardValueResponse.swift */,
 				9E728AAF2BD393BE0045FF15 /* DashboardDistributionResponse.swift */,
 				9E728AB12BD395C30045FF15 /* AdminDailyDashboardResponse.swift */,
-				9E728AB32BD395FE0045FF15 /* DailyValueResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -288,7 +285,6 @@
 				9E728AAA2BD392210045FF15 /* DashboardAPIs.swift in Sources */,
 				9E728A732BD367510045FF15 /* ContentView.swift in Sources */,
 				9E728A942BD36FC00045FF15 /* BibbiString.swift in Sources */,
-				9E728AB42BD395FE0045FF15 /* DailyValueResponse.swift in Sources */,
 				9E728A812BD368140045FF15 /* DashboardView.swift in Sources */,
 				9E728A712BD367510045FF15 /* BibbiAdminApp.swift in Sources */,
 				9E728A842BD368440045FF15 /* DashboardViewModel.swift in Sources */,

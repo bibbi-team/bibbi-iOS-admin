@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct BibbiAdminApp: App {
+    
+    // MARK: - Properties
+    @StateObject private var dashboardViewModel = DashboardViewModel()
+    
+    // MARK: - Body
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(dashboardViewModel)
         }
     }
 }

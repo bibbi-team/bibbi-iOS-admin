@@ -7,3 +7,14 @@
 
 import Foundation
 
+extension String.StringInterpolation {
+    
+    mutating func appendInterpolation(data: Data, using encoding: String.Encoding = .utf8) {
+        guard let str = String(data: data, encoding: encoding) else {
+            appendLiteral("Data Encoding Error")
+            return
+        }
+        appendLiteral(str)
+    }
+    
+}

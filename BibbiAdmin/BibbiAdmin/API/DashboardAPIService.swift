@@ -13,9 +13,12 @@ final class DashboardAPIService: APIService {
     // MARK: - Methods
     func requestDashboard() -> AnyPublisher<AdminDashboardResponse, HTTPError> {
         let spec = DashboardAPIs.dashboard.spec
-        let headers = AdminHeader.baseHeaders
+        let headers = AdminHeader.baseHeaders + [.xAppKey, .xAuthToken(token: BibbiNetworkString.xAuthToken)]
         
         return request(spec, headers: headers)
+            .handleEvents(receiveOutput: { data in
+                debugPrint("대시보드 API 호출 결과: \(data: data)")
+            })
             .tryMap { data in
                 let decoder = JSONDecoder()
                 guard let response = try? decoder.decode(AdminDashboardResponse.self, from: data) else {
@@ -23,9 +26,6 @@ final class DashboardAPIService: APIService {
                 }
                 return response
             }
-            .handleEvents(receiveOutput: { response in
-                print("대시보드 API 호출 결과: \(response)")
-            })
             .mapError(
                 of: HTTPError.self,
                 replaceIfCastingFail: HTTPError.unknown
@@ -33,11 +33,17 @@ final class DashboardAPIService: APIService {
             .eraseToAnyPublisher()
     }
     
-    func requestDailyDashboard(from startDate: String, to endDate: String) -> AnyPublisher<AdminDailyDashboardResponse, HTTPError> {
+    func requestDailyDashboard(
+        from startDate: String,
+        to endDate: String
+    ) -> AnyPublisher<AdminDailyDashboardResponse, HTTPError> {
         let spec = DashboardAPIs.daily(from: startDate, to: endDate).spec
-        let headers = AdminHeader.baseHeaders
+        let headers = AdminHeader.baseHeaders  + [.xAppKey, .xAuthToken(token: BibbiNetworkString.xAuthToken)]
         
         return request(spec, headers: headers)
+            .handleEvents(receiveOutput: { data in
+                debugPrint("일별 현황 API 호출 결과: \(data: data)")
+            })
             .tryMap { data in
                 let decoder = JSONDecoder()
                 guard let response = try? decoder.decode(AdminDailyDashboardResponse.self, from: data) else {
@@ -45,9 +51,6 @@ final class DashboardAPIService: APIService {
                 }
                 return response
             }
-            .handleEvents(receiveOutput: { response in
-                print("일별 현황 API 호출 결과: \(response)")
-            })
             .mapError(
                 of: HTTPError.self,
                 replaceIfCastingFail: HTTPError.unknown

@@ -8,7 +8,7 @@
 import Foundation
 
 struct DashboardDistributionResponse: Decodable {
-    enum CodingKeys: String, CodingKeys {
+    enum CodingKeys: String, CodingKey {
         case count
         case percent
     }

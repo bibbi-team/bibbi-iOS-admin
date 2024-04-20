@@ -7,11 +7,12 @@
 
 import Foundation
 
+typealias DailyValueResponse = [String: Int]
 struct AdminDailyDashboardResponse: Decodable {
     enum CodingKeys: String, CodingKey {
         case dailyMemberRegistration
         case dailyPostCreation
     }
-    var dailyMemberRegistration: [DailyValueResponse]
-    var dailyPostCreation: [DailyValueResponse]
+    var dailyMemberRegistration: DailyValueResponse
+    var dailyPostCreation: DailyValueResponse
 }

@@ -21,5 +21,5 @@ struct AdminDashboardResponse: Decodable {
     var totalPost: DashboardValueResponse
     var totalComment: DashboardValueResponse
     var totalReaction: DashboardValueResponse
-    var familyMemberDistribution: DashboardDistributionResponse
+    var familyMemberDistribution: [DashboardDistributionResponse]
 }
