@@ -18,8 +18,19 @@
 		9E728A8D2BD368AC0045FF15 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728A8C2BD368AC0045FF15 /* API.swift */; };
 		9E728A902BD368B70045FF15 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728A8F2BD368B70045FF15 /* APIService.swift */; };
 		9E728A942BD36FC00045FF15 /* BibbiString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728A932BD36FC00045FF15 /* BibbiString.swift */; };
-		9E728A962BD3710C0045FF15 /* APISpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728A952BD3710C0045FF15 /* APISpec.swift */; };
 		9E728A992BD371470045FF15 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728A982BD371470045FF15 /* ViewModelType.swift */; };
+		9E728A9E2BD37D080045FF15 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728A9D2BD37D080045FF15 /* APIConfig.swift */; };
+		9E728AA02BD37D1D0045FF15 /* APIConfigType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728A9F2BD37D1D0045FF15 /* APIConfigType.swift */; };
+		9E728AA22BD37DD60045FF15 /* APIServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AA12BD37DD60045FF15 /* APIServiceType.swift */; };
+		9E728AA42BD383330045FF15 /* APISpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AA32BD383330045FF15 /* APISpec.swift */; };
+		9E728AA62BD391AF0045FF15 /* URLRequest+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AA52BD391AF0045FF15 /* URLRequest+Ext.swift */; };
+		9E728AAA2BD392210045FF15 /* DashboardAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AA92BD392210045FF15 /* DashboardAPIs.swift */; };
+		9E728AAC2BD3922A0045FF15 /* DashboardAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AAB2BD3922A0045FF15 /* DashboardAPIService.swift */; };
+		9E728AAE2BD393AF0045FF15 /* DashboardValueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AAD2BD393AF0045FF15 /* DashboardValueResponse.swift */; };
+		9E728AB02BD393BE0045FF15 /* DashboardDistributionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AAF2BD393BE0045FF15 /* DashboardDistributionResponse.swift */; };
+		9E728AB22BD395C30045FF15 /* AdminDailyDashboardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AB12BD395C30045FF15 /* AdminDailyDashboardResponse.swift */; };
+		9E728AB62BD3AD9E0045FF15 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AB52BD3AD9E0045FF15 /* Date+Ext.swift */; };
+		9E728AB82BD3B6B20045FF15 /* Publisher+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AB72BD3B6B20045FF15 /* Publisher+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +46,19 @@
 		9E728A8C2BD368AC0045FF15 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		9E728A8F2BD368B70045FF15 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		9E728A932BD36FC00045FF15 /* BibbiString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibbiString.swift; sourceTree = "<group>"; };
-		9E728A952BD3710C0045FF15 /* APISpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISpec.swift; sourceTree = "<group>"; };
 		9E728A982BD371470045FF15 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		9E728A9D2BD37D080045FF15 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
+		9E728A9F2BD37D1D0045FF15 /* APIConfigType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfigType.swift; sourceTree = "<group>"; };
+		9E728AA12BD37DD60045FF15 /* APIServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceType.swift; sourceTree = "<group>"; };
+		9E728AA32BD383330045FF15 /* APISpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISpec.swift; sourceTree = "<group>"; };
+		9E728AA52BD391AF0045FF15 /* URLRequest+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Ext.swift"; sourceTree = "<group>"; };
+		9E728AA92BD392210045FF15 /* DashboardAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardAPIs.swift; sourceTree = "<group>"; };
+		9E728AAB2BD3922A0045FF15 /* DashboardAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardAPIService.swift; sourceTree = "<group>"; };
+		9E728AAD2BD393AF0045FF15 /* DashboardValueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardValueResponse.swift; sourceTree = "<group>"; };
+		9E728AAF2BD393BE0045FF15 /* DashboardDistributionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardDistributionResponse.swift; sourceTree = "<group>"; };
+		9E728AB12BD395C30045FF15 /* AdminDailyDashboardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDailyDashboardResponse.swift; sourceTree = "<group>"; };
+		9E728AB52BD3AD9E0045FF15 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		9E728AB72BD3B6B20045FF15 /* Publisher+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,10 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				9E728A702BD367510045FF15 /* BibbiAdminApp.swift */,
-				9E728A972BD3713E0045FF15 /* Types */,
-				9E728A922BD36FA90045FF15 /* Strings */,
-				9E728A8B2BD368980045FF15 /* APIServices */,
-				9E728A882BD3687F0045FF15 /* Extensions */,
+				9E728AA82BD392150045FF15 /* Helpers */,
+				9E728A8B2BD368980045FF15 /* API */,
 				9E728A852BD368460045FF15 /* Models */,
 				9E728A822BD368380045FF15 /* ViewModels */,
 				9E728A7E2BD367F40045FF15 /* Views */,
@@ -120,6 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				9E728A862BD368750045FF15 /* AdminDashboardResponse.swift */,
+				9E728AAD2BD393AF0045FF15 /* DashboardValueResponse.swift */,
+				9E728AAF2BD393BE0045FF15 /* DashboardDistributionResponse.swift */,
+				9E728AB12BD395C30045FF15 /* AdminDailyDashboardResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -128,18 +151,21 @@
 			isa = PBXGroup;
 			children = (
 				9E728A892BD368850045FF15 /* String+Ext.swift */,
+				9E728AA52BD391AF0045FF15 /* URLRequest+Ext.swift */,
+				9E728AB52BD3AD9E0045FF15 /* Date+Ext.swift */,
+				9E728AB72BD3B6B20045FF15 /* Publisher+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		9E728A8B2BD368980045FF15 /* APIServices */ = {
+		9E728A8B2BD368980045FF15 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				9E728A8C2BD368AC0045FF15 /* API.swift */,
-				9E728A952BD3710C0045FF15 /* APISpec.swift */,
-				9E728A8F2BD368B70045FF15 /* APIService.swift */,
+				9E728AA92BD392210045FF15 /* DashboardAPIs.swift */,
+				9E728AAB2BD3922A0045FF15 /* DashboardAPIService.swift */,
+				9E728AA72BD392090045FF15 /* Helpers */,
 			);
-			path = APIServices;
+			path = API;
 			sourceTree = "<group>";
 		};
 		9E728A922BD36FA90045FF15 /* Strings */ = {
@@ -153,9 +179,32 @@
 		9E728A972BD3713E0045FF15 /* Types */ = {
 			isa = PBXGroup;
 			children = (
+				9E728A9F2BD37D1D0045FF15 /* APIConfigType.swift */,
+				9E728AA12BD37DD60045FF15 /* APIServiceType.swift */,
 				9E728A982BD371470045FF15 /* ViewModelType.swift */,
 			);
 			path = Types;
+			sourceTree = "<group>";
+		};
+		9E728AA72BD392090045FF15 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9E728A8C2BD368AC0045FF15 /* API.swift */,
+				9E728AA32BD383330045FF15 /* APISpec.swift */,
+				9E728A9D2BD37D080045FF15 /* APIConfig.swift */,
+				9E728A8F2BD368B70045FF15 /* APIService.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9E728AA82BD392150045FF15 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9E728A972BD3713E0045FF15 /* Types */,
+				9E728A922BD36FA90045FF15 /* Strings */,
+				9E728A882BD3687F0045FF15 /* Extensions */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,17 +277,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E728AA02BD37D1D0045FF15 /* APIConfigType.swift in Sources */,
+				9E728AB22BD395C30045FF15 /* AdminDailyDashboardResponse.swift in Sources */,
+				9E728AB02BD393BE0045FF15 /* DashboardDistributionResponse.swift in Sources */,
 				9E728A992BD371470045FF15 /* ViewModelType.swift in Sources */,
+				9E728AA22BD37DD60045FF15 /* APIServiceType.swift in Sources */,
+				9E728AAA2BD392210045FF15 /* DashboardAPIs.swift in Sources */,
 				9E728A732BD367510045FF15 /* ContentView.swift in Sources */,
-				9E728A962BD3710C0045FF15 /* APISpec.swift in Sources */,
 				9E728A942BD36FC00045FF15 /* BibbiString.swift in Sources */,
 				9E728A812BD368140045FF15 /* DashboardView.swift in Sources */,
 				9E728A712BD367510045FF15 /* BibbiAdminApp.swift in Sources */,
 				9E728A842BD368440045FF15 /* DashboardViewModel.swift in Sources */,
+				9E728AAC2BD3922A0045FF15 /* DashboardAPIService.swift in Sources */,
 				9E728A872BD368750045FF15 /* AdminDashboardResponse.swift in Sources */,
+				9E728A9E2BD37D080045FF15 /* APIConfig.swift in Sources */,
 				9E728A8A2BD368850045FF15 /* String+Ext.swift in Sources */,
+				9E728AA42BD383330045FF15 /* APISpec.swift in Sources */,
+				9E728AB62BD3AD9E0045FF15 /* Date+Ext.swift in Sources */,
+				9E728AB82BD3B6B20045FF15 /* Publisher+Ext.swift in Sources */,
 				9E728A902BD368B70045FF15 /* APIService.swift in Sources */,
+				9E728AA62BD391AF0045FF15 /* URLRequest+Ext.swift in Sources */,
 				9E728A8D2BD368AC0045FF15 /* API.swift in Sources */,
+				9E728AAE2BD393AF0045FF15 /* DashboardValueResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
