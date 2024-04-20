@@ -31,6 +31,7 @@
 		9E728AB22BD395C30045FF15 /* AdminDailyDashboardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AB12BD395C30045FF15 /* AdminDailyDashboardResponse.swift */; };
 		9E728AB42BD395FE0045FF15 /* DailyValueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AB32BD395FE0045FF15 /* DailyValueResponse.swift */; };
 		9E728AB62BD3AD9E0045FF15 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AB52BD3AD9E0045FF15 /* Date+Ext.swift */; };
+		9E728AB82BD3B6B20045FF15 /* Publisher+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AB72BD3B6B20045FF15 /* Publisher+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		9E728AB12BD395C30045FF15 /* AdminDailyDashboardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDailyDashboardResponse.swift; sourceTree = "<group>"; };
 		9E728AB32BD395FE0045FF15 /* DailyValueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyValueResponse.swift; sourceTree = "<group>"; };
 		9E728AB52BD3AD9E0045FF15 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		9E728AB72BD3B6B20045FF15 /* Publisher+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				9E728A892BD368850045FF15 /* String+Ext.swift */,
 				9E728AA52BD391AF0045FF15 /* URLRequest+Ext.swift */,
 				9E728AB52BD3AD9E0045FF15 /* Date+Ext.swift */,
+				9E728AB72BD3B6B20045FF15 /* Publisher+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				9E728A8A2BD368850045FF15 /* String+Ext.swift in Sources */,
 				9E728AA42BD383330045FF15 /* APISpec.swift in Sources */,
 				9E728AB62BD3AD9E0045FF15 /* Date+Ext.swift in Sources */,
+				9E728AB82BD3B6B20045FF15 /* Publisher+Ext.swift in Sources */,
 				9E728A902BD368B70045FF15 /* APIService.swift in Sources */,
 				9E728AA62BD391AF0045FF15 /* URLRequest+Ext.swift in Sources */,
 				9E728A8D2BD368AC0045FF15 /* API.swift in Sources */,

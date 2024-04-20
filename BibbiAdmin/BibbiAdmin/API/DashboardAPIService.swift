@@ -23,16 +23,13 @@ final class DashboardAPIService: APIService {
                 }
                 return response
             }
-            .mapError { error in
-                if error is HTTPError {
-                    return error as! HTTPError
-                } else {
-                    return HTTPError.unknown
-                }
-            }
             .handleEvents(receiveOutput: { response in
                 print("대시보드 API 호출 결과: \(response)")
             })
+            .mapError(
+                of: HTTPError.self,
+                replaceIfCastingFail: HTTPError.unknown
+            )
             .eraseToAnyPublisher()
     }
     
@@ -48,16 +45,13 @@ final class DashboardAPIService: APIService {
                 }
                 return response
             }
-            .mapError { error in
-                if error is HTTPError {
-                    return error as! HTTPError
-                } else {
-                    return HTTPError.unknown
-                }
-            }
             .handleEvents(receiveOutput: { response in
                 print("일별 현황 API 호출 결과: \(response)")
             })
+            .mapError(
+                of: HTTPError.self,
+                replaceIfCastingFail: HTTPError.unknown
+            )
             .eraseToAnyPublisher()
     }
     
