@@ -22,4 +22,5 @@ extension BibbiNetworkString {
 
 extension BibbiUserInterfaceString {
     static var dashboard = "Dashboard"
+    static var bibbi = "Bibbi"
 }

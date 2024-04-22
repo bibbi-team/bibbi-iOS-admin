@@ -14,23 +14,12 @@ struct ContentView: View {
     
     // MARK: - Body
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text(BibbiUserInterfaceString.dashboard)
-        }
-        .padding()
-        .onAppear(perform: {
-            viewModel.fetchDashboardResponse()
-            
-            let startDate = Date().addingTimeInterval(-86400 * 7)
-            let endDate = Date()
-            viewModel.fetchDailyDashboardResponse(from: startDate, to: endDate)
-        })
+        DashboardView()
+            .background(Color.bibbiBlack)
     }
 }
 
+// MARK: - Preview
 #Preview {
     ContentView()
         .environmentObject(DashboardViewModel())
