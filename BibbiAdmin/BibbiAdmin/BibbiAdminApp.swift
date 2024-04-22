@@ -13,11 +13,23 @@ struct BibbiAdminApp: App {
     // MARK: - Properties
     @StateObject private var dashboardViewModel = DashboardViewModel()
     
+    private var windowWidthSize: CGFloat = 714.0
+    
     // MARK: - Body
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(dashboardViewModel)
+                #if os(macOS)
+                .frame(
+                    minWidth: windowWidthSize,
+                    maxWidth: windowWidthSize
+                )
+                #endif
         }
+        #if os(macOS)
+        .windowStyle(.hiddenTitleBar)
+        .windowResizability(.contentSize)
+        #endif
     }
 }

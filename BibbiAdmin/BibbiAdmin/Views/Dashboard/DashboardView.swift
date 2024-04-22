@@ -8,17 +8,24 @@
 import SwiftUI
 
 struct DashboardView: View {
+    
+    // MARK: - Properties
+    @EnvironmentObject var viewModel: DashboardViewModel
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        VStack(spacing: 0) {
+            DashboardTopBarView()
+                .padding(.top)
+            
+            ScrollView(.vertical, showsIndicators: false) {
+                
+            }
         }
-        .padding()
     }
 }
 
+// MARK: - Preview
 #Preview {
     DashboardView()
+        .environmentObject(DashboardViewModel())
 }
