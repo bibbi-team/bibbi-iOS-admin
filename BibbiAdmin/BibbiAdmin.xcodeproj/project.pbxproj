@@ -7,18 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E6447D92BDA4210005446BA /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 9E6447D82BDA4210005446BA /* ComposableArchitecture */; };
 		9E728A712BD367510045FF15 /* BibbiAdminApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728A702BD367510045FF15 /* BibbiAdminApp.swift */; };
-		9E728A732BD367510045FF15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728A722BD367510045FF15 /* ContentView.swift */; };
 		9E728A752BD367530045FF15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E728A742BD367530045FF15 /* Assets.xcassets */; };
 		9E728A782BD367530045FF15 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E728A772BD367530045FF15 /* Preview Assets.xcassets */; };
 		9E728A812BD368140045FF15 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728A802BD368140045FF15 /* DashboardView.swift */; };
-		9E728A842BD368440045FF15 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728A832BD368440045FF15 /* DashboardViewModel.swift */; };
 		9E728A872BD368750045FF15 /* AdminDashboardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728A862BD368750045FF15 /* AdminDashboardResponse.swift */; };
 		9E728A8A2BD368850045FF15 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728A892BD368850045FF15 /* String+Ext.swift */; };
 		9E728A8D2BD368AC0045FF15 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728A8C2BD368AC0045FF15 /* API.swift */; };
 		9E728A902BD368B70045FF15 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728A8F2BD368B70045FF15 /* APIService.swift */; };
 		9E728A942BD36FC00045FF15 /* BibbiString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728A932BD36FC00045FF15 /* BibbiString.swift */; };
-		9E728A992BD371470045FF15 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728A982BD371470045FF15 /* ViewModelType.swift */; };
 		9E728A9E2BD37D080045FF15 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728A9D2BD37D080045FF15 /* APIConfig.swift */; };
 		9E728AA02BD37D1D0045FF15 /* APIConfigType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728A9F2BD37D1D0045FF15 /* APIConfigType.swift */; };
 		9E728AA22BD37DD60045FF15 /* APIServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AA12BD37DD60045FF15 /* APIServiceType.swift */; };
@@ -30,24 +28,23 @@
 		9E728AB02BD393BE0045FF15 /* DashboardDistributionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AAF2BD393BE0045FF15 /* DashboardDistributionResponse.swift */; };
 		9E728AB22BD395C30045FF15 /* AdminDailyDashboardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AB12BD395C30045FF15 /* AdminDailyDashboardResponse.swift */; };
 		9E728AB62BD3AD9E0045FF15 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AB52BD3AD9E0045FF15 /* Date+Ext.swift */; };
-		9E728AB82BD3B6B20045FF15 /* Publisher+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728AB72BD3B6B20045FF15 /* Publisher+Ext.swift */; };
 		9E728ABB2BD3ECE00045FF15 /* DashboardTopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728ABA2BD3ECE00045FF15 /* DashboardTopBarView.swift */; };
+		9E728B532BDA0AF60045FF15 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728B522BDA0AF60045FF15 /* Dashboard.swift */; };
+		9E728B552BDA0FB10045FF15 /* Data+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728B542BDA0FB10045FF15 /* Data+Ext.swift */; };
+		9E728B582BDA115A0045FF15 /* DashboardAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728B572BDA115A0045FF15 /* DashboardAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9E728A6D2BD367510045FF15 /* BibbiAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BibbiAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E728A702BD367510045FF15 /* BibbiAdminApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibbiAdminApp.swift; sourceTree = "<group>"; };
-		9E728A722BD367510045FF15 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9E728A742BD367530045FF15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E728A772BD367530045FF15 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9E728A802BD368140045FF15 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
-		9E728A832BD368440045FF15 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		9E728A862BD368750045FF15 /* AdminDashboardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDashboardResponse.swift; sourceTree = "<group>"; };
 		9E728A892BD368850045FF15 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		9E728A8C2BD368AC0045FF15 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		9E728A8F2BD368B70045FF15 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		9E728A932BD36FC00045FF15 /* BibbiString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibbiString.swift; sourceTree = "<group>"; };
-		9E728A982BD371470045FF15 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		9E728A9D2BD37D080045FF15 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		9E728A9F2BD37D1D0045FF15 /* APIConfigType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfigType.swift; sourceTree = "<group>"; };
 		9E728AA12BD37DD60045FF15 /* APIServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceType.swift; sourceTree = "<group>"; };
@@ -59,8 +56,10 @@
 		9E728AAF2BD393BE0045FF15 /* DashboardDistributionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardDistributionResponse.swift; sourceTree = "<group>"; };
 		9E728AB12BD395C30045FF15 /* AdminDailyDashboardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDailyDashboardResponse.swift; sourceTree = "<group>"; };
 		9E728AB52BD3AD9E0045FF15 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
-		9E728AB72BD3B6B20045FF15 /* Publisher+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Ext.swift"; sourceTree = "<group>"; };
 		9E728ABA2BD3ECE00045FF15 /* DashboardTopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTopBarView.swift; sourceTree = "<group>"; };
+		9E728B522BDA0AF60045FF15 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		9E728B542BDA0FB10045FF15 /* Data+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Ext.swift"; sourceTree = "<group>"; };
+		9E728B572BDA115A0045FF15 /* DashboardAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E6447D92BDA4210005446BA /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,7 +97,6 @@
 				9E728AA82BD392150045FF15 /* Helpers */,
 				9E728A8B2BD368980045FF15 /* API */,
 				9E728A852BD368460045FF15 /* Models */,
-				9E728A822BD368380045FF15 /* ViewModels */,
 				9E728A7E2BD367F40045FF15 /* Views */,
 				9E728A742BD367530045FF15 /* Assets.xcassets */,
 				9E728A762BD367530045FF15 /* Preview Content */,
@@ -116,7 +115,6 @@
 		9E728A7E2BD367F40045FF15 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9E728A722BD367510045FF15 /* ContentView.swift */,
 				9E728A7F2BD3680B0045FF15 /* Dashboard */,
 			);
 			path = Views;
@@ -125,18 +123,11 @@
 		9E728A7F2BD3680B0045FF15 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				9E728B5B2BDA16410045FF15 /* Features */,
 				9E728ABA2BD3ECE00045FF15 /* DashboardTopBarView.swift */,
 				9E728A802BD368140045FF15 /* DashboardView.swift */,
 			);
 			path = Dashboard;
-			sourceTree = "<group>";
-		};
-		9E728A822BD368380045FF15 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				9E728A832BD368440045FF15 /* DashboardViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		9E728A852BD368460045FF15 /* Models */ = {
@@ -156,7 +147,7 @@
 				9E728A892BD368850045FF15 /* String+Ext.swift */,
 				9E728AA52BD391AF0045FF15 /* URLRequest+Ext.swift */,
 				9E728AB52BD3AD9E0045FF15 /* Date+Ext.swift */,
-				9E728AB72BD3B6B20045FF15 /* Publisher+Ext.swift */,
+				9E728B542BDA0FB10045FF15 /* Data+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -184,7 +175,6 @@
 			children = (
 				9E728A9F2BD37D1D0045FF15 /* APIConfigType.swift */,
 				9E728AA12BD37DD60045FF15 /* APIServiceType.swift */,
-				9E728A982BD371470045FF15 /* ViewModelType.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -203,11 +193,28 @@
 		9E728AA82BD392150045FF15 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9E728B562BDA114B0045FF15 /* Dependencies */,
 				9E728A972BD3713E0045FF15 /* Types */,
 				9E728A922BD36FA90045FF15 /* Strings */,
 				9E728A882BD3687F0045FF15 /* Extensions */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9E728B562BDA114B0045FF15 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				9E728B572BDA115A0045FF15 /* DashboardAPIClient.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		9E728B5B2BDA16410045FF15 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				9E728B522BDA0AF60045FF15 /* Dashboard.swift */,
+			);
+			path = Features;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +233,9 @@
 			dependencies = (
 			);
 			name = BibbiAdmin;
+			packageProductDependencies = (
+				9E6447D82BDA4210005446BA /* ComposableArchitecture */,
+			);
 			productName = BibbiAdmin;
 			productReference = 9E728A6D2BD367510045FF15 /* BibbiAdmin.app */;
 			productType = "com.apple.product-type.application";
@@ -254,6 +264,9 @@
 				Base,
 			);
 			mainGroup = 9E728A642BD367510045FF15;
+			packageReferences = (
+				9E6447D72BDA4210005446BA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 9E728A6E2BD367510045FF15 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -283,21 +296,20 @@
 				9E728AA02BD37D1D0045FF15 /* APIConfigType.swift in Sources */,
 				9E728AB22BD395C30045FF15 /* AdminDailyDashboardResponse.swift in Sources */,
 				9E728AB02BD393BE0045FF15 /* DashboardDistributionResponse.swift in Sources */,
-				9E728A992BD371470045FF15 /* ViewModelType.swift in Sources */,
 				9E728AA22BD37DD60045FF15 /* APIServiceType.swift in Sources */,
+				9E728B552BDA0FB10045FF15 /* Data+Ext.swift in Sources */,
 				9E728AAA2BD392210045FF15 /* DashboardAPIs.swift in Sources */,
-				9E728A732BD367510045FF15 /* ContentView.swift in Sources */,
 				9E728A942BD36FC00045FF15 /* BibbiString.swift in Sources */,
 				9E728A812BD368140045FF15 /* DashboardView.swift in Sources */,
 				9E728A712BD367510045FF15 /* BibbiAdminApp.swift in Sources */,
-				9E728A842BD368440045FF15 /* DashboardViewModel.swift in Sources */,
+				9E728B532BDA0AF60045FF15 /* Dashboard.swift in Sources */,
+				9E728B582BDA115A0045FF15 /* DashboardAPIClient.swift in Sources */,
 				9E728AAC2BD3922A0045FF15 /* DashboardAPIService.swift in Sources */,
 				9E728A872BD368750045FF15 /* AdminDashboardResponse.swift in Sources */,
 				9E728A9E2BD37D080045FF15 /* APIConfig.swift in Sources */,
 				9E728A8A2BD368850045FF15 /* String+Ext.swift in Sources */,
 				9E728AA42BD383330045FF15 /* APISpec.swift in Sources */,
 				9E728AB62BD3AD9E0045FF15 /* Date+Ext.swift in Sources */,
-				9E728AB82BD3B6B20045FF15 /* Publisher+Ext.swift in Sources */,
 				9E728A902BD368B70045FF15 /* APIService.swift in Sources */,
 				9E728ABB2BD3ECE00045FF15 /* DashboardTopBarView.swift in Sources */,
 				9E728AA62BD391AF0045FF15 /* URLRequest+Ext.swift in Sources */,
@@ -526,6 +538,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9E6447D72BDA4210005446BA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9E6447D82BDA4210005446BA /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E6447D72BDA4210005446BA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9E728A652BD367510045FF15 /* Project object */;
 }

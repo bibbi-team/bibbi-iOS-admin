@@ -41,7 +41,7 @@ enum AdminAPI {
         }
         
         static var baseHeaders: [Self] {
-            [.contentJson]
+            [.contentJson, .xAppKey, .xAuthToken(token: BibbiNetworkString.xAuthToken)]
         }
     }
 }

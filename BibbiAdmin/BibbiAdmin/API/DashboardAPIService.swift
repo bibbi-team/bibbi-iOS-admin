@@ -11,51 +11,37 @@ import Foundation
 final class DashboardAPIService: APIService {
     
     // MARK: - Methods
-    func requestDashboard() -> AnyPublisher<AdminDashboardResponse, HTTPError> {
+    func requestDashboard() async throws -> AdminDashboardResponse {
         let spec = DashboardAPIs.dashboard.spec
-        let headers = AdminHeader.baseHeaders + [.xAppKey, .xAuthToken(token: BibbiNetworkString.xAuthToken)]
+        let headers = AdminHeader.baseHeaders
         
-        return request(spec, headers: headers)
-            .handleEvents(receiveOutput: { data in
-                debugPrint("대시보드 API 호출 결과: \(data: data)")
-            })
-            .tryMap { data in
-                let decoder = JSONDecoder()
-                guard let response = try? decoder.decode(AdminDashboardResponse.self, from: data) else {
-                    throw HTTPError.decodingError
-                }
-                return response
-            }
-            .mapError(
-                of: HTTPError.self,
-                replaceIfCastingFail: HTTPError.unknown
-            )
-            .eraseToAnyPublisher()
+        let data = try await request(spec, headers: headers)
+        
+        guard let safeData = data.as(of: AdminDashboardResponse.self)
+        else {
+            throw HTTPError.decoding
+        }
+        debugPrint("대시보드 API 호출 결과: \(safeData)")
+        
+        return safeData
     }
     
     func requestDailyDashboard(
         from startDate: String,
         to endDate: String
-    ) -> AnyPublisher<AdminDailyDashboardResponse, HTTPError> {
+    ) async throws -> AdminDailyDashboardResponse {
         let spec = DashboardAPIs.daily(from: startDate, to: endDate).spec
-        let headers = AdminHeader.baseHeaders  + [.xAppKey, .xAuthToken(token: BibbiNetworkString.xAuthToken)]
+        let headers = AdminHeader.baseHeaders
         
-        return request(spec, headers: headers)
-            .handleEvents(receiveOutput: { data in
-                debugPrint("일별 현황 API 호출 결과: \(data: data)")
-            })
-            .tryMap { data in
-                let decoder = JSONDecoder()
-                guard let response = try? decoder.decode(AdminDailyDashboardResponse.self, from: data) else {
-                    throw HTTPError.decodingError
-                }
-                return response
-            }
-            .mapError(
-                of: HTTPError.self,
-                replaceIfCastingFail: HTTPError.unknown
-            )
-            .eraseToAnyPublisher()
+        let data = try await request(spec, headers: headers)
+        
+        guard let safeData = data.as(of: AdminDailyDashboardResponse.self)
+        else {
+            throw HTTPError.decoding
+        }
+        debugPrint("일일현황 API 호출 결과: \(safeData)")
+        
+        return safeData
     }
     
 }

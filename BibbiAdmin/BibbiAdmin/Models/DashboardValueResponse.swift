@@ -17,3 +17,9 @@ struct DashboardValueResponse: Decodable {
     var gapBetweenYesterday: Int
     var percentBetweenYesterday: Double
 }
+
+extension DashboardValueResponse: Identifiable {
+    var id: UUID { UUID() }
+}
+
+extension DashboardValueResponse: Equatable { }

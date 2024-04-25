@@ -10,24 +10,21 @@ import Foundation
 
 class APIService: APIServiceType {
     
-    func request(_ spec: APISpec, headers: [AdminHeader]? = nil) -> AnyPublisher<Data, Error> {
+    func request(_ spec: APISpec, headers: [AdminHeader]? = nil) async throws -> Data {
         let url = URL(string: spec.url)!
         var request = URLRequest(url: url)
         request.headers = headers
         request.httpMethod = spec.method.rawValue
         
-        return Just(request)
-            .flatMap { request in
-                URLSession.shared.dataTaskPublisher(for: request)
-                    .tryMap { data, response in
-                        guard let statusCode = (response as? HTTPURLResponse)?.statusCode,
-                              200..<300 ~= statusCode else {
-                            throw HTTPError.statusCodeError
-                        }
-                        return data
-                    }
-            }
-            .eraseToAnyPublisher()
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        guard let statusCode = (response as? HTTPURLResponse)?.statusCode,
+              200..<300 ~= statusCode
+        else {
+            throw HTTPError.statusCode
+        }
+        
+        return data
     }
     
 }
