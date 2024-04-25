@@ -30,7 +30,9 @@ extension URLRequest {
     }
     
     var headers: [APIHeader]? {
-        get { underlyingHeaders }
+        get {
+            underlyingHeaders
+        }
         set {
             self.setHeaders(newValue)
             underlyingHeaders = newValue

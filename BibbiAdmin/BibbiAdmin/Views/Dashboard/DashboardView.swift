@@ -27,6 +27,7 @@ struct DashboardView: View {
                         .font(.title)
                         .foregroundStyle(Color.bibbiWhite)
                 }
+                
                 Button("Fetch") {
                     store.send(.fetchDashboardResponse)
                 }

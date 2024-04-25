@@ -33,10 +33,10 @@ struct Dashboard {
     @Dependency(\.dashboardClient) var dashboard
     
     // MARK: - Reduce
-    var reduce: some ReducerOf<Self> {
+    var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-            case .fetchDashboardResponse:                
+            case .fetchDashboardResponse:
                 state.isLoading = true
                 state.adminDashboardResponse = nil
                 return .run { send in
