@@ -23,3 +23,13 @@ struct AdminDashboardResponse: Decodable {
     var totalReaction: DashboardValueResponse
     var familyMemberDistribution: [DashboardDistributionResponse]
 }
+
+extension AdminDashboardResponse: Identifiable {
+    var id: UUID { UUID() }
+}
+
+extension AdminDashboardResponse: Equatable {
+    static func == (lhs: AdminDashboardResponse, rhs: AdminDashboardResponse) -> Bool {
+        return lhs.id == rhs.id
+    }
+}

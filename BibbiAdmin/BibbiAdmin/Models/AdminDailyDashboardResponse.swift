@@ -16,3 +16,9 @@ struct AdminDailyDashboardResponse: Decodable {
     var dailyMemberRegistration: DailyValueResponse
     var dailyPostCreation: DailyValueResponse
 }
+
+extension AdminDailyDashboardResponse: Identifiable {
+    var id: UUID { UUID() }
+}
+
+extension AdminDailyDashboardResponse: Equatable { }

@@ -26,19 +26,16 @@ struct APISpec {
 
 // MARK: - HTTP Error
 enum HTTPError: Error {
-    case invalidData
-    case statusCodeError
-    case decodingError
+    case decoding
+    case statusCode
     case unknown
     
     var localizedDescription: String {
         switch self {
-        case .invalidData:
-            return "Invalid Data"
-        case .statusCodeError:
-            return "HTTP Status Code Error"
-        case .decodingError:
+        case .decoding:
             return "Decoding Error"
+        case .statusCode:
+            return "HTTP Status Code Error"
         default:
             return "Unknwon Error"
         }

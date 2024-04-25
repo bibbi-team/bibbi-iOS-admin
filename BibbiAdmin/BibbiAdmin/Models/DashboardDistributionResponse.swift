@@ -15,3 +15,9 @@ struct DashboardDistributionResponse: Decodable {
     var count: Int
     var percent: Double
 }
+
+extension DashboardDistributionResponse: Identifiable {
+    var id: UUID { UUID() }
+}
+
+extension DashboardDistributionResponse: Equatable { }
