@@ -23,3 +23,12 @@ extension DashboardValueResponse: Identifiable {
 }
 
 extension DashboardValueResponse: Equatable { }
+
+// MARK: - Mock Data
+extension DashboardValueResponse {
+    static let mock = Self(
+        count: 12,
+        gapBetweenYesterday: 53,
+        percentBetweenYesterday: -33.33333
+    )
+}

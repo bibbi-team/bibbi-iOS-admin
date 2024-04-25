@@ -5,12 +5,13 @@
 //  Created by 김건우 on 4/25/24.
 //
 
-import Dependencies
+import ComposableArchitecture
 import Foundation
 
+@DependencyClient
 struct DashboardAPIClient {
     var fetchDashboard: () async throws -> AdminDashboardResponse
-    var fetchDailyDashboard: (_ startDate: String, _ endDate: String) async throws -> AdminDailyDashboardResponse
+    var fetchDailyDashboard: (_ from: String, _ to: String) async throws -> AdminDailyDashboardResponse
 }
 
 extension DashboardAPIClient: DependencyKey {
