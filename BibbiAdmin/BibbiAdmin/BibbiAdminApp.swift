@@ -18,7 +18,7 @@ struct BibbiAdminApp: App {
     }
     
     // MARK: - Properties
-    private var windowWidthSize: CGFloat = 714.0
+    private var windowWidthSize: CGFloat = 768.0
     
     // MARK: - Body
     var body: some Scene {

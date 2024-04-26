@@ -20,22 +20,47 @@ struct DashboardView: View {
                 .padding(.top)
             
             ScrollView(.vertical, showsIndicators: false) {
-                if store.isLoading {
-                    ProgressView()
-                } else {
-                    Text(store.adminDashboardResponse.debugDescription)
-                        .font(.title)
-                        .foregroundStyle(Color.bibbiWhite)
+                VStack(spacing: 12) {
+                    HStack(spacing: 12) {
+                        DashboardValueBoxView(
+                            store.adminDashboardResponse?.totalMember,
+                            of: .totalMember
+                        )
+                        
+                        DashboardValueBoxView(
+                            store.adminDashboardResponse?.totalFamily,
+                            of: .totalFamily
+                        )
+                        
+                        DashboardValueBoxView(
+                            store.adminDashboardResponse?.totalPost,
+                            of: .totalPost
+                        )
+                    }
+                    
+                    HStack(spacing: 12) {
+                        DashboardValueBoxView(
+                            store.adminDashboardResponse?.totalComment,
+                            of: .totalComment
+                        )
+                        
+                        DashboardValueBoxView(
+                            store.adminDashboardResponse?.totalReaction,
+                            of: .totalReaction
+                        )
+                        
+                        DashboardValueBoxView(
+                            store.adminDashboardResponse?.totalMember,
+                            of: .totalMember
+                        )
+                    }
                 }
-                
-                Button("Fetch") {
-                    store.send(.fetchDashboardResponse)
-                }
-                .buttonStyle(.borderedProminent)
             }
             .onAppear {
                 store.send(.fetchDashboardResponse)
             }
+            .padding(.horizontal, 40)
+            .safeAreaPadding(.vertical)
         }
     }
 }

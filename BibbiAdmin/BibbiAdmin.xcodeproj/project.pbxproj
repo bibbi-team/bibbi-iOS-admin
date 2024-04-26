@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9E6447D92BDA4210005446BA /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 9E6447D82BDA4210005446BA /* ComposableArchitecture */; };
+		9E6447FC2BDAA004005446BA /* DashboardValueBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6447FB2BDAA004005446BA /* DashboardValueBoxView.swift */; };
+		9E6447FE2BDAA42D005446BA /* DashboardValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6447FD2BDAA42D005446BA /* DashboardValueType.swift */; };
 		9E728A712BD367510045FF15 /* BibbiAdminApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728A702BD367510045FF15 /* BibbiAdminApp.swift */; };
 		9E728A752BD367530045FF15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E728A742BD367530045FF15 /* Assets.xcassets */; };
 		9E728A782BD367530045FF15 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E728A772BD367530045FF15 /* Preview Assets.xcassets */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E6447FB2BDAA004005446BA /* DashboardValueBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardValueBoxView.swift; sourceTree = "<group>"; };
+		9E6447FD2BDAA42D005446BA /* DashboardValueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardValueType.swift; sourceTree = "<group>"; };
 		9E728A6D2BD367510045FF15 /* BibbiAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BibbiAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E728A702BD367510045FF15 /* BibbiAdminApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibbiAdminApp.swift; sourceTree = "<group>"; };
 		9E728A742BD367530045FF15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 				9E728B5B2BDA16410045FF15 /* Features */,
 				9E728ABA2BD3ECE00045FF15 /* DashboardTopBarView.swift */,
 				9E728A802BD368140045FF15 /* DashboardView.swift */,
+				9E6447FB2BDAA004005446BA /* DashboardValueBoxView.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 				9E728AAD2BD393AF0045FF15 /* DashboardValueResponse.swift */,
 				9E728AAF2BD393BE0045FF15 /* DashboardDistributionResponse.swift */,
 				9E728AB12BD395C30045FF15 /* AdminDailyDashboardResponse.swift */,
+				9E6447FD2BDAA42D005446BA /* DashboardValueType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 			files = (
 				9E728AA02BD37D1D0045FF15 /* APIConfigType.swift in Sources */,
 				9E728AB22BD395C30045FF15 /* AdminDailyDashboardResponse.swift in Sources */,
+				9E6447FE2BDAA42D005446BA /* DashboardValueType.swift in Sources */,
 				9E728AB02BD393BE0045FF15 /* DashboardDistributionResponse.swift in Sources */,
 				9E728AA22BD37DD60045FF15 /* APIServiceType.swift in Sources */,
 				9E728B552BDA0FB10045FF15 /* Data+Ext.swift in Sources */,
@@ -306,6 +313,7 @@
 				9E728B582BDA115A0045FF15 /* DashboardAPIClient.swift in Sources */,
 				9E728AAC2BD3922A0045FF15 /* DashboardAPIService.swift in Sources */,
 				9E728A872BD368750045FF15 /* AdminDashboardResponse.swift in Sources */,
+				9E6447FC2BDAA004005446BA /* DashboardValueBoxView.swift in Sources */,
 				9E728A9E2BD37D080045FF15 /* APIConfig.swift in Sources */,
 				9E728A8A2BD368850045FF15 /* String+Ext.swift in Sources */,
 				9E728AA42BD383330045FF15 /* APISpec.swift in Sources */,

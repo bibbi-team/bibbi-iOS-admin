@@ -64,8 +64,8 @@ struct Dashboard {
                     
                     await send(.dailyDashboardResponse(
                         try await self.dashboard.fetchDailyDashboard(
-                            _startDate,
-                            _endDate
+                            from: _startDate,
+                            to: _endDate
                         )
                     ))
                 } catch: { error, _ in
