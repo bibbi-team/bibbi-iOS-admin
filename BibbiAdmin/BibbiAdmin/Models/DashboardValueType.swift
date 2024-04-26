@@ -29,18 +29,18 @@ enum DashboardValueType {
         }
     }
     
-    var image: Image {
+    var resource: String {
         switch self {
         case .totalMember:
-            return Image(.firecracker)
+            return "firecracker"
         case .totalFamily:
-            return Image(.fire)
+            return "fire"
         case .totalPost:
-            return Image(.heart)
+            return "heart"
         case .totalComment:
-            return Image(.message)
+            return "message"
         case .totalReaction:
-            return Image(.smile2)
+            return "smile2"
         }
     }
 }

@@ -27,7 +27,10 @@ struct DashboardValueBoxView: View {
         VStack(alignment: .leading, spacing: 3) {
             if let value {
                 HStack(spacing: 3) {
-                    type.image
+                    Image(type.resource)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 15, height: 15)
                     Text("\(type.title)")
                         .font(.system(size: 12))
                         .foregroundStyle(Color.gray200)
