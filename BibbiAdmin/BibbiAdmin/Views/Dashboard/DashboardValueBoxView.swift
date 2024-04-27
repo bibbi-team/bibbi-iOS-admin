@@ -56,15 +56,7 @@ struct DashboardValueBoxView: View {
                 }
             }
         }
-        .padding(.top, 12)
-        .padding(.bottom, 14)
-        .padding(.horizontal)
-        .frame(height: 125)
-        .frame(maxWidth: .infinity)
-        .background(
-            Color.gray800,
-            in: RoundedRectangle(cornerRadius: 12)
-        )
+        .roundedBoxStyle(height: 139)
     }
     
     // MARK: - Helpers

@@ -32,13 +32,17 @@ struct DashboardView: View {
                             of: .totalFamily
                         )
                         
-                        DashboardValueBoxView(
-                            store.adminDashboardResponse?.totalPost,
-                            of: .totalPost
+                        FamilyDistributionBoxView(
+                            store.adminDashboardResponse?.familyMemberDistribution
                         )
                     }
                     
                     HStack(spacing: 12) {
+                        DashboardValueBoxView(
+                            store.adminDashboardResponse?.totalPost,
+                            of: .totalPost
+                        )
+                        
                         DashboardValueBoxView(
                             store.adminDashboardResponse?.totalComment,
                             of: .totalComment
@@ -47,11 +51,6 @@ struct DashboardView: View {
                         DashboardValueBoxView(
                             store.adminDashboardResponse?.totalReaction,
                             of: .totalReaction
-                        )
-                        
-                        DashboardValueBoxView(
-                            store.adminDashboardResponse?.totalMember,
-                            of: .totalMember
                         )
                     }
                 }
