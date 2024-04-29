@@ -15,7 +15,7 @@ struct Dashboard {
     @ObservableState
     struct State: Equatable {
         var startDate: Date = Date()
-        var endDate: Date = Date()
+        var endDate: Date = Date().addingTimeInterval(-50 * 86_400)
         var adminDashboardResponse: AdminDashboardResponse?
         var adminDailyDashboardResponse: AdminDailyDashboardResponse?
         var isLoading: Bool = false
@@ -23,6 +23,7 @@ struct Dashboard {
     
     // MARK: - Action
     enum Action {
+        case onAppear
         case fetchDashboardResponse
         case dashboardResponse(AdminDashboardResponse)
         case fetchDailyDashboardResponse
@@ -36,9 +37,16 @@ struct Dashboard {
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-            case .fetchDashboardResponse:
+            case .onAppear:
                 state.isLoading = true
                 state.adminDashboardResponse = nil
+                state.adminDailyDashboardResponse = nil
+                return .merge(
+                    .send(.fetchDashboardResponse),
+                    .send(.fetchDailyDashboardResponse)
+                )
+
+            case .fetchDashboardResponse:
                 return .run { send in
                     await send(.dashboardResponse(
                         try await self.dashboard.fetchDashboard()
@@ -53,8 +61,6 @@ struct Dashboard {
                 return .none
                 
             case .fetchDailyDashboardResponse:
-                state.isLoading = true
-                state.adminDailyDashboardResponse = nil
                 return .run { [
                     startDate = state.startDate,
                     endDate = state.endDate

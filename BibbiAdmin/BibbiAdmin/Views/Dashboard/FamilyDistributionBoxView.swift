@@ -73,7 +73,6 @@ struct FamilyDistributionBoxView: View {
                 }
             }
         }
-        .roundedBoxStyle(height: 139)
     }
     
     // MARK: - Helpers

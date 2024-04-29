@@ -7,6 +7,22 @@
 
 import Foundation
 
+extension String {
+    
+    func toDate(_ format: String) -> Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        formatter.calendar = .autoupdatingCurrent
+        formatter.timeZone = .autoupdatingCurrent
+        return formatter.date(from: self)
+    }
+    
+    func toDate(_ type: Date.CustomFormatStyle) -> Date? {
+        return self.toDate(type.string)
+    }
+    
+}
+
 extension String.StringInterpolation {
     
     mutating func appendInterpolation(data: Data, using encoding: String.Encoding = .utf8) {

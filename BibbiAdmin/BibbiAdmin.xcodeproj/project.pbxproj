@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E3DDE932BDD43F20003C234 /* DashboardChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3DDE922BDD43F20003C234 /* DashboardChartsView.swift */; };
+		9E3DDE952BDD46F60003C234 /* DailyValueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3DDE942BDD46F60003C234 /* DailyValueResponse.swift */; };
+		9E3DDE972BDD47540003C234 /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3DDE962BDD47540003C234 /* Dictionary+Ext.swift */; };
+		9E4473DF2BDFB26F0028DD5B /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4473DE2BDFB26F0028DD5B /* Array+Extension.swift */; };
 		9E544FE02BDBC76000212FF6 /* FamilyDistributionBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E544FDF2BDBC76000212FF6 /* FamilyDistributionBoxView.swift */; };
 		9E544FE32BDBCEC000212FF6 /* RoundedBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E544FE22BDBCEC000212FF6 /* RoundedBoxStyle.swift */; };
 		9E6447D92BDA4210005446BA /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 9E6447D82BDA4210005446BA /* ComposableArchitecture */; };
@@ -39,6 +43,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E3DDE922BDD43F20003C234 /* DashboardChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardChartsView.swift; sourceTree = "<group>"; };
+		9E3DDE942BDD46F60003C234 /* DailyValueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyValueResponse.swift; sourceTree = "<group>"; };
+		9E3DDE962BDD47540003C234 /* Dictionary+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Ext.swift"; sourceTree = "<group>"; };
+		9E4473DE2BDFB26F0028DD5B /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		9E544FDF2BDBC76000212FF6 /* FamilyDistributionBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDistributionBoxView.swift; sourceTree = "<group>"; };
 		9E544FE22BDBCEC000212FF6 /* RoundedBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBoxStyle.swift; sourceTree = "<group>"; };
 		9E6447FB2BDAA004005446BA /* DashboardValueBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardValueBoxView.swift; sourceTree = "<group>"; };
@@ -144,6 +152,7 @@
 				9E728A802BD368140045FF15 /* DashboardView.swift */,
 				9E6447FB2BDAA004005446BA /* DashboardValueBoxView.swift */,
 				9E544FDF2BDBC76000212FF6 /* FamilyDistributionBoxView.swift */,
+				9E3DDE922BDD43F20003C234 /* DashboardChartsView.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -155,6 +164,7 @@
 				9E728AAD2BD393AF0045FF15 /* DashboardValueResponse.swift */,
 				9E728AAF2BD393BE0045FF15 /* DashboardDistributionResponse.swift */,
 				9E728AB12BD395C30045FF15 /* AdminDailyDashboardResponse.swift */,
+				9E3DDE942BDD46F60003C234 /* DailyValueResponse.swift */,
 				9E6447FD2BDAA42D005446BA /* DashboardValueType.swift */,
 			);
 			path = Models;
@@ -167,6 +177,8 @@
 				9E728AA52BD391AF0045FF15 /* URLRequest+Ext.swift */,
 				9E728AB52BD3AD9E0045FF15 /* Date+Ext.swift */,
 				9E728B542BDA0FB10045FF15 /* Data+Ext.swift */,
+				9E3DDE962BDD47540003C234 /* Dictionary+Ext.swift */,
+				9E4473DE2BDFB26F0028DD5B /* Array+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -314,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E728AA02BD37D1D0045FF15 /* APIConfigType.swift in Sources */,
+				9E3DDE932BDD43F20003C234 /* DashboardChartsView.swift in Sources */,
 				9E728AB22BD395C30045FF15 /* AdminDailyDashboardResponse.swift in Sources */,
 				9E6447FE2BDAA42D005446BA /* DashboardValueType.swift in Sources */,
 				9E728AB02BD393BE0045FF15 /* DashboardDistributionResponse.swift in Sources */,
@@ -321,6 +334,7 @@
 				9E728B552BDA0FB10045FF15 /* Data+Ext.swift in Sources */,
 				9E728AAA2BD392210045FF15 /* DashboardAPIs.swift in Sources */,
 				9E728A942BD36FC00045FF15 /* BibbiString.swift in Sources */,
+				9E3DDE972BDD47540003C234 /* Dictionary+Ext.swift in Sources */,
 				9E728A812BD368140045FF15 /* DashboardView.swift in Sources */,
 				9E544FE32BDBCEC000212FF6 /* RoundedBoxStyle.swift in Sources */,
 				9E728A712BD367510045FF15 /* BibbiAdminApp.swift in Sources */,
@@ -332,8 +346,10 @@
 				9E728A9E2BD37D080045FF15 /* APIConfig.swift in Sources */,
 				9E728A8A2BD368850045FF15 /* String+Ext.swift in Sources */,
 				9E728AA42BD383330045FF15 /* APISpec.swift in Sources */,
+				9E4473DF2BDFB26F0028DD5B /* Array+Extension.swift in Sources */,
 				9E728AB62BD3AD9E0045FF15 /* Date+Ext.swift in Sources */,
 				9E728A902BD368B70045FF15 /* APIService.swift in Sources */,
+				9E3DDE952BDD46F60003C234 /* DailyValueResponse.swift in Sources */,
 				9E544FE02BDBC76000212FF6 /* FamilyDistributionBoxView.swift in Sources */,
 				9E728ABB2BD3ECE00045FF15 /* DashboardTopBarView.swift in Sources */,
 				9E728AA62BD391AF0045FF15 /* URLRequest+Ext.swift in Sources */,

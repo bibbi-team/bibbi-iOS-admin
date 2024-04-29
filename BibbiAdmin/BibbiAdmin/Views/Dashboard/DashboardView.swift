@@ -26,37 +26,59 @@ struct DashboardView: View {
                             store.adminDashboardResponse?.totalMember,
                             of: .totalMember
                         )
+                        .roundedBoxStyle(height: 139)
                         
                         DashboardValueBoxView(
                             store.adminDashboardResponse?.totalFamily,
                             of: .totalFamily
                         )
+                        .roundedBoxStyle(height: 139)
                         
                         FamilyDistributionBoxView(
                             store.adminDashboardResponse?.familyMemberDistribution
                         )
+                        .roundedBoxStyle(height: 139)
                     }
+                    
+                    DashboardChartsView(
+                        store.adminDailyDashboardResponse?.dailyMemberRegistration
+                            .toDailyValueResponse()
+                            .sorted { $0.date < $1.date }
+                            .last(7)
+                    )
+                    .roundedBoxStyle(height: 288)
                     
                     HStack(spacing: 12) {
                         DashboardValueBoxView(
                             store.adminDashboardResponse?.totalPost,
                             of: .totalPost
                         )
+                        .roundedBoxStyle(height: 139)
                         
                         DashboardValueBoxView(
                             store.adminDashboardResponse?.totalComment,
                             of: .totalComment
                         )
+                        .roundedBoxStyle(height: 139)
                         
                         DashboardValueBoxView(
                             store.adminDashboardResponse?.totalReaction,
                             of: .totalReaction
                         )
+                        .roundedBoxStyle(height: 139)
                     }
+                    
+                    DashboardChartsView(
+                        store.adminDailyDashboardResponse?.dailyPostCreation
+                            .toDailyValueResponse()
+                            .sorted { $0.date < $1.date }
+                            .last(7)
+                    )
+                    .roundedBoxStyle(height: 288)
                 }
             }
             .onAppear {
-                store.send(.fetchDashboardResponse)
+                store.send(.onAppear)
             }
             .padding(.horizontal, 40)
             .safeAreaPadding(.vertical)

@@ -56,7 +56,6 @@ struct DashboardValueBoxView: View {
                 }
             }
         }
-        .roundedBoxStyle(height: 139)
     }
     
     // MARK: - Helpers
