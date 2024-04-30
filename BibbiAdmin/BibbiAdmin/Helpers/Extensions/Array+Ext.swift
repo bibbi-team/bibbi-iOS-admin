@@ -15,7 +15,7 @@ extension Array {
         var last: [Element] = []
         
         let remainingCount = count - k
-        var lastCount = remainingCount >= 0 ? remainingCount : count
+        let lastCount = remainingCount >= 0 ? remainingCount : count
         
         let endIndex = count - 1
         let startIndex = lastCount

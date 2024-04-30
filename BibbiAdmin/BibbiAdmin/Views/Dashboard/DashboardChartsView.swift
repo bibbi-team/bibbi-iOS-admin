@@ -27,12 +27,12 @@ struct DashboardChartsView: View {
                     .foregroundStyle(Color.gray200)
             }
             
-            if let values = store.dailyMemberValues {
+            if let values = store.values {
                 if !values.isEmpty {
                     Chart {
                         ForEach(values) { value in
                             AreaMark(
-                                x: .value("Date", value.date),
+                                x: .value("Date", value.date, unit: .day),
                                 y: .value("Count", value.count)
                             )
                             .foregroundStyle(
@@ -46,10 +46,9 @@ struct DashboardChartsView: View {
                                     endPoint: .bottom
                                 )
                             )
-                            .interpolationMethod(.catmullRom)
                             
                             LineMark(
-                                x: .value("Date", value.date),
+                                x: .value("Date", value.date, unit: .day),
                                 y: .value("Count", value.count)
                             )
                             .symbol {
@@ -58,9 +57,45 @@ struct DashboardChartsView: View {
                                     .frame(width: 16, height: 16)
                             }
                             .lineStyle(.init(lineWidth: 0))
-                            .interpolationMethod(.catmullRom)
                             .foregroundStyle(Color.mainYellow)
+                            
+                            if let date = store.selectedDate {
+                                RuleMark(
+                                    x: .value("Selected", date, unit: .day)
+                                )
+                                .foregroundStyle(Color.gray.opacity(0.3))
+                                .offset(yStart: -10)
+                                .zIndex(-1)
+                                .annotation(
+                                    position: .top,
+                                    spacing: 0,
+                                    overflowResolution: .init(
+                                        x: .fit(to: .chart),
+                                        y: .disabled
+                                    )
+                                    
+                                ) {
+                                    if let value = store.selectedValue {
+                                        VStack(alignment: .leading, spacing: 5) {
+                                            Text("가입자 수")
+                                                .font(.system(size: 12))
+                                                .foregroundStyle(Color.gray200)
+                                            Text("\(value.count)")
+                                                .font(.system(size: 16, weight: .semibold))
+                                                .foregroundStyle(Color.bibbiWhite)
+                                        }
+                                        .padding(10)
+                                        .background(
+                                            Color.gray600,
+                                            in: RoundedRectangle(cornerRadius: 8)
+                                        )
+                                    } else {
+                                        EmptyView()
+                                    }
+                                }
+                            }
                         }
+                        .interpolationMethod(.catmullRom)
                     }
                     .chartXAxis {
                         AxisMarks(preset: .aligned, values: .stride(by: .day)) { value in
@@ -68,12 +103,12 @@ struct DashboardChartsView: View {
                                 AxisValueLabel(date.toFormatString(.MDd))
                                     .font(.system(size: 18))
                                     .foregroundStyle(Color.gray200)
-                                    .offset(y: 16)
+                                    .offset(x: 40, y: 16)
                                 if date.isToday {
                                     AxisValueLabel("Today")
                                         .font(.system(size: 14))
                                         .foregroundStyle(Color.mainYellow)
-                                        .offset(y: 34)
+                                        .offset(x: 40, y: 34)
                                 }
                             }
                         }
@@ -89,9 +124,9 @@ struct DashboardChartsView: View {
                             AxisGridLine(stroke: .init(dash: [5], dashPhase: 3))
                         }
                     }
-                    .chartXSelection(value: $store.selectedDate)
+                    .chartXSelection(value: $store.rawSelectedDate)
                     .chartXScale(range: .plotDimension(padding: 15))
-                    .padding(.bottom, 40)
+                    .padding(.vertical, 40)
                 } else {
                     VStack(spacing: 5) {
                         Image(.lyingDownBibbi)
@@ -110,6 +145,7 @@ struct DashboardChartsView: View {
             }
         }
     }
+
 }
 
 // MARK: - Preview
@@ -118,7 +154,8 @@ struct DashboardChartsView: View {
         store: StoreOf<DashboardCharts>(
             initialState:
                 DashboardCharts.State(
-                    response: .mock
+                    values: AdminDailyDashboardResponse.mock
+                        .dailyMemberValues
                 )
         ) {
             DashboardCharts()

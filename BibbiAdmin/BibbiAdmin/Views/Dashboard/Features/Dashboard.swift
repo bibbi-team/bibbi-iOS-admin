@@ -16,7 +16,6 @@ struct Dashboard {
     struct State: Equatable {
         var startDate: Date = Date()
         var endDate: Date = Date().addingTimeInterval(-50 * 86_400)
-        var isLoading: Bool = false
     
         var dashboardTopBar: DashboardTopBar.State?
         var dashboardAdmin: DashboardAdmin.State?
@@ -89,7 +88,7 @@ struct Dashboard {
                 
             case let.dailyDashboardResponse(response):
                 state.dashboardCharts = DashboardCharts.State(
-                    response: response
+                    values: response.dailyMemberValues
                 )
                 return .none
                 

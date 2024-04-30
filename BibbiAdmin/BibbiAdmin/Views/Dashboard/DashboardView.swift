@@ -17,7 +17,7 @@ struct DashboardView: View {
     var body: some View {
         VStack(spacing: 0) {
             if let store = store.scope(state: \.dashboardTopBar, action: \.dashboardTopBar) {
-                DashboardTopBarView()
+                DashboardTopBarView(store: store)
                     .padding(.top)
             }
             

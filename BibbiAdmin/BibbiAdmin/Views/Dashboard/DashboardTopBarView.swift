@@ -5,9 +5,13 @@
 //  Created by 김건우 on 4/20/24.
 //
 
+import ComposableArchitecture
 import SwiftUI
 
 struct DashboardTopBarView: View {
+    
+    // MARK: - Store
+    let store: StoreOf<DashboardTopBar>
     
     // MARK: - Body
     var body: some View {
@@ -33,5 +37,9 @@ struct DashboardTopBarView: View {
 
 // MARK: - Preview
 #Preview {
-    DashboardTopBarView()
+    DashboardTopBarView(
+        store: StoreOf<DashboardTopBar>(initialState: DashboardTopBar.State()) {
+            DashboardTopBar()
+        }
+    )
 }

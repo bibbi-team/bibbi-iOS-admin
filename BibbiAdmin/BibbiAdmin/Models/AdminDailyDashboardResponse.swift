@@ -22,6 +22,22 @@ extension AdminDailyDashboardResponse: Identifiable {
 
 extension AdminDailyDashboardResponse: Equatable { }
 
+extension AdminDailyDashboardResponse {
+    var dailyMemberValues: [DailyValueResponse]? {
+        return dailyMemberRegistration
+            .toDailyValueResponse()
+            .sorted { $0.date < $1.date }
+            .last(7)
+    }
+    
+    var dailyPostValues: [DailyValueResponse]? {
+        return dailyPostCreation
+            .toDailyValueResponse()
+            .sorted { $0.date < $1.date }
+            .last(7)
+    }
+}
+
 // MARK: - Mock
 extension AdminDailyDashboardResponse {
     static let mock = Self(

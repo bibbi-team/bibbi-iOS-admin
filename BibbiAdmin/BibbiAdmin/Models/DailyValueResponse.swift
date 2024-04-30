@@ -12,6 +12,8 @@ struct DailyValueResponse {
     var count: Int
 }
 
+extension DailyValueResponse: Equatable { }
+
 extension DailyValueResponse: Identifiable {
     var id: UUID { UUID() }
 }
