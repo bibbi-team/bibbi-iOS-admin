@@ -11,52 +11,78 @@ import SwiftUI
 struct DashboardView: View {
     
     // MARK: - Store
-    let store: StoreOf<Dashboard>
+    @Bindable var store: StoreOf<Dashboard>
     
     // MARK: - Body
     var body: some View {
         VStack(spacing: 0) {
-            DashboardTopBarView()
-                .padding(.top)
+            if let store = store.scope(state: \.dashboardTopBar, action: \.dashboardTopBar) {
+                DashboardTopBarView(store: store)
+                    .padding(.top)
+            }
             
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 12) {
                     HStack(spacing: 12) {
-                        DashboardValueBoxView(
-                            store.adminDashboardResponse?.totalMember,
-                            of: .totalMember
+                        if let store = store.scope(state: \.dashboardAdmin, action: \.dashboardAdmin) {
+                            DashboardValueBoxView(
+                                store: store,
+                                of: .totalMember
+                            )
+                            .roundedBoxStyle(height: 139)
+                            
+                            DashboardValueBoxView(
+                                store: store,
+                                of: .totalFamily
+                            )
+                            .roundedBoxStyle(height: 139)
+                            
+                            FamilyDistributionBoxView(
+                                store: store
+                            )
+                            .roundedBoxStyle(height: 139)
+                        }
+                    }
+                    
+                    if let store = store.scope(state: \.dashboardCharts, action: \.dashboardCharts) {
+                        DashboardChartsView(
+                            store: store
                         )
-                        
-                        DashboardValueBoxView(
-                            store.adminDashboardResponse?.totalFamily,
-                            of: .totalFamily
-                        )
-                        
-                        FamilyDistributionBoxView(
-                            store.adminDashboardResponse?.familyMemberDistribution
-                        )
+                        .roundedBoxStyle(height: 288)
                     }
                     
                     HStack(spacing: 12) {
-                        DashboardValueBoxView(
-                            store.adminDashboardResponse?.totalPost,
-                            of: .totalPost
+                        if let store = store.scope(state: \.dashboardAdmin, action: \.dashboardAdmin) {
+                            DashboardValueBoxView(
+                                store: store,
+                                of: .totalPost
+                            )
+                            .roundedBoxStyle(height: 139)
+                            
+                            DashboardValueBoxView(
+                                store: store,
+                                of: .totalComment
+                            )
+                            .roundedBoxStyle(height: 139)
+                            
+                            DashboardValueBoxView(
+                                store: store,
+                                of: .totalReaction
+                            )
+                            .roundedBoxStyle(height: 139)
+                        }
+                    }
+                    
+                    if let store = store.scope(state: \.dashboardCharts, action: \.dashboardCharts) {
+                        DashboardChartsView(
+                            store: store
                         )
-                        
-                        DashboardValueBoxView(
-                            store.adminDashboardResponse?.totalComment,
-                            of: .totalComment
-                        )
-                        
-                        DashboardValueBoxView(
-                            store.adminDashboardResponse?.totalReaction,
-                            of: .totalReaction
-                        )
+                        .roundedBoxStyle(height: 288)
                     }
                 }
             }
             .onAppear {
-                store.send(.fetchDashboardResponse)
+                store.send(.onAppear)
             }
             .padding(.horizontal, 40)
             .safeAreaPadding(.vertical)

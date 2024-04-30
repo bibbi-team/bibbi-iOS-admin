@@ -18,15 +18,8 @@ extension DashboardAPIClient: DependencyKey {
     static let apiService = DashboardAPIService()
     
     static let liveValue = Self(
-        fetchDashboard: {
-            try await apiService.requestDashboard()
-        },
-        fetchDailyDashboard: { startDate, endDate in
-            try await apiService.requestDailyDashboard(
-                from: startDate,
-                to: endDate
-            )
-        }
+        fetchDashboard: apiService.requestDashboard,
+        fetchDailyDashboard: apiService.requestDailyDashboard(from:to:)
     )
 }
 

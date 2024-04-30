@@ -5,27 +5,30 @@
 //  Created by 김건우 on 4/25/24.
 //
 
+import ComposableArchitecture
 import SwiftUI
 
 struct DashboardValueBoxView: View {
     
+    // MARK: - Store
+    @Bindable var store: StoreOf<DashboardAdmin>
+    
     // MARK: - Properties
-    let value: DashboardValueResponse?
     let type: DashboardValueType
     
     // MARK: - Intializer
     init(
-        _ value: DashboardValueResponse?,
+        store: StoreOf<DashboardAdmin>,
         of type: DashboardValueType
     ) {
         self.type = type
-        self.value = value
+        self.store = store
     }
     
     // MARK: - Body
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
-            if let value {
+            if let value = store.response?.totalFamily {
                 HStack(spacing: 3) {
                     Image(type.resource)
                         .resizable()
@@ -56,7 +59,6 @@ struct DashboardValueBoxView: View {
                 }
             }
         }
-        .roundedBoxStyle(height: 139)
     }
     
     // MARK: - Helpers
@@ -71,7 +73,12 @@ struct DashboardValueBoxView: View {
 // MARK: - Preview
 #Preview {
     DashboardValueBoxView(
-        .mock,
+        store: StoreOf<DashboardAdmin>(
+            initialState: DashboardAdmin.State(
+                response: .mock
+            )) {
+                DashboardAdmin()
+            },
         of: .totalReaction
     )
     .previewLayout(.sizeThatFits)
