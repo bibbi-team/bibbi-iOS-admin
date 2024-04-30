@@ -5,13 +5,15 @@
 //  Created by 김건우 on 4/26/24.
 //
 
+import ComposableArchitecture
 import SwiftUI
 
 struct FamilyDistributionBoxView: View {
     
-    // MARK: - Properties
-    let distributions: [DashboardDistributionResponse]?
+    // MARK: - Store
+    @Bindable var store: StoreOf<DashboardAdmin>
     
+    // MARK: - Properties
     let gridItem: [GridItem] = [
         .init(.flexible()),
         .init(.flexible()),
@@ -19,16 +21,10 @@ struct FamilyDistributionBoxView: View {
         .init(.flexible())
     ]
     
-    // MARK: - Intializer
-    init(_ distributions: [DashboardDistributionResponse]?) {
-        self.distributions = distributions?.sorted { $0.percent > $1.percent }
-        
-    }
-    
     // MARK: - Body
     var body: some View {
         VStack(alignment: .leading) {
-            if let distributions {
+            if let distributions = store.response?.familyMemberDistribution {
                 HStack(spacing: 3) {
                     Image(.smile)
                         .resizable()
@@ -88,6 +84,12 @@ struct FamilyDistributionBoxView: View {
 // MARK: - Preview
 #Preview {
     FamilyDistributionBoxView(
-        DashboardDistributionResponse.mock
+        store: StoreOf<DashboardAdmin>(
+            initialState: DashboardAdmin.State(
+                response: .mock
+            )
+        ) {
+            DashboardAdmin()
+        }
     )
 }

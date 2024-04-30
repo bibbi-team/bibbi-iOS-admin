@@ -5,18 +5,14 @@
 //  Created by 김건우 on 4/27/24.
 //
 
+import ComposableArchitecture
 import Charts
 import SwiftUI
 
 struct DashboardChartsView: View {
     
-    // MARK: - Properties
-    let values: [DailyValueResponse]?
-    
-    // MARK: - Intializer
-    init(_ values: [DailyValueResponse]?) {
-        self.values = values
-    }
+    // MARK: - Store
+    @Bindable var store: StoreOf<DashboardCharts>
     
     // MARK: - Body
     var body: some View {
@@ -31,7 +27,7 @@ struct DashboardChartsView: View {
                     .foregroundStyle(Color.gray200)
             }
             
-            if let values = values {
+            if let values = store.dailyMemberValues {
                 if !values.isEmpty {
                     Chart {
                         ForEach(values) { value in
@@ -93,6 +89,7 @@ struct DashboardChartsView: View {
                             AxisGridLine(stroke: .init(dash: [5], dashPhase: 3))
                         }
                     }
+                    .chartXSelection(value: $store.selectedDate)
                     .chartXScale(range: .plotDimension(padding: 15))
                     .padding(.bottom, 40)
                 } else {
@@ -118,9 +115,13 @@ struct DashboardChartsView: View {
 // MARK: - Preview
 #Preview {
     DashboardChartsView(
-        AdminDailyDashboardResponse.mock.dailyPostCreation
-            .toDailyValueResponse()
-            .sorted { $0.date < $1.date }
-            .last(7)
+        store: StoreOf<DashboardCharts>(
+            initialState:
+                DashboardCharts.State(
+                    response: .mock
+                )
+        ) {
+            DashboardCharts()
+        }
     )
 }

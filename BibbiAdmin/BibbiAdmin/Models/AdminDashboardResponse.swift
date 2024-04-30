@@ -33,3 +33,16 @@ extension AdminDashboardResponse: Equatable {
         return lhs.id == rhs.id
     }
 }
+
+// MARK: - Mock
+
+extension AdminDashboardResponse {
+    static let mock = Self(
+        totalMember: DashboardValueResponse.mock,
+        totalFamily: DashboardValueResponse.mock,
+        totalPost: DashboardValueResponse.mock,
+        totalComment: DashboardValueResponse.mock,
+        totalReaction: DashboardValueResponse.mock,
+        familyMemberDistribution: DashboardDistributionResponse.mock
+    )
+}

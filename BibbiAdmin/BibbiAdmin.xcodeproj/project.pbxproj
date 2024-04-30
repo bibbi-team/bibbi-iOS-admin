@@ -11,6 +11,11 @@
 		9E3DDE952BDD46F60003C234 /* DailyValueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3DDE942BDD46F60003C234 /* DailyValueResponse.swift */; };
 		9E3DDE972BDD47540003C234 /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3DDE962BDD47540003C234 /* Dictionary+Ext.swift */; };
 		9E4473DF2BDFB26F0028DD5B /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4473DE2BDFB26F0028DD5B /* Array+Extension.swift */; };
+		9E4473E12BDFC5DA0028DD5B /* DashboardCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4473E02BDFC5DA0028DD5B /* DashboardCharts.swift */; };
+		9E4473E32BDFD7540028DD5B /* DashboardAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4473E22BDFD7540028DD5B /* DashboardAdmin.swift */; };
+		9E4473E52BDFDC8D0028DD5B /* DashboardTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4473E42BDFDC8D0028DD5B /* DashboardTopBar.swift */; };
+		9E4473E72BDFE1600028DD5B /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 9E4473E62BDFE1600028DD5B /* ComposableArchitecture */; };
+		9E4473E92BDFE18A0028DD5B /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 9E4473E82BDFE18A0028DD5B /* ComposableArchitecture */; };
 		9E544FE02BDBC76000212FF6 /* FamilyDistributionBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E544FDF2BDBC76000212FF6 /* FamilyDistributionBoxView.swift */; };
 		9E544FE32BDBCEC000212FF6 /* RoundedBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E544FE22BDBCEC000212FF6 /* RoundedBoxStyle.swift */; };
 		9E6447D92BDA4210005446BA /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 9E6447D82BDA4210005446BA /* ComposableArchitecture */; };
@@ -47,6 +52,9 @@
 		9E3DDE942BDD46F60003C234 /* DailyValueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyValueResponse.swift; sourceTree = "<group>"; };
 		9E3DDE962BDD47540003C234 /* Dictionary+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Ext.swift"; sourceTree = "<group>"; };
 		9E4473DE2BDFB26F0028DD5B /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		9E4473E02BDFC5DA0028DD5B /* DashboardCharts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCharts.swift; sourceTree = "<group>"; };
+		9E4473E22BDFD7540028DD5B /* DashboardAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardAdmin.swift; sourceTree = "<group>"; };
+		9E4473E42BDFDC8D0028DD5B /* DashboardTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTopBar.swift; sourceTree = "<group>"; };
 		9E544FDF2BDBC76000212FF6 /* FamilyDistributionBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDistributionBoxView.swift; sourceTree = "<group>"; };
 		9E544FE22BDBCEC000212FF6 /* RoundedBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBoxStyle.swift; sourceTree = "<group>"; };
 		9E6447FB2BDAA004005446BA /* DashboardValueBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardValueBoxView.swift; sourceTree = "<group>"; };
@@ -83,7 +91,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E4473E72BDFE1600028DD5B /* ComposableArchitecture in Frameworks */,
 				9E6447D92BDA4210005446BA /* ComposableArchitecture in Frameworks */,
+				9E4473E92BDFE18A0028DD5B /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +255,9 @@
 			isa = PBXGroup;
 			children = (
 				9E728B522BDA0AF60045FF15 /* Dashboard.swift */,
+				9E4473E02BDFC5DA0028DD5B /* DashboardCharts.swift */,
+				9E4473E22BDFD7540028DD5B /* DashboardAdmin.swift */,
+				9E4473E42BDFDC8D0028DD5B /* DashboardTopBar.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -267,6 +280,8 @@
 			name = BibbiAdmin;
 			packageProductDependencies = (
 				9E6447D82BDA4210005446BA /* ComposableArchitecture */,
+				9E4473E62BDFE1600028DD5B /* ComposableArchitecture */,
+				9E4473E82BDFE18A0028DD5B /* ComposableArchitecture */,
 			);
 			productName = BibbiAdmin;
 			productReference = 9E728A6D2BD367510045FF15 /* BibbiAdmin.app */;
@@ -325,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E4473E32BDFD7540028DD5B /* DashboardAdmin.swift in Sources */,
 				9E728AA02BD37D1D0045FF15 /* APIConfigType.swift in Sources */,
 				9E3DDE932BDD43F20003C234 /* DashboardChartsView.swift in Sources */,
 				9E728AB22BD395C30045FF15 /* AdminDailyDashboardResponse.swift in Sources */,
@@ -341,6 +357,7 @@
 				9E728B532BDA0AF60045FF15 /* Dashboard.swift in Sources */,
 				9E728B582BDA115A0045FF15 /* DashboardAPIClient.swift in Sources */,
 				9E728AAC2BD3922A0045FF15 /* DashboardAPIService.swift in Sources */,
+				9E4473E12BDFC5DA0028DD5B /* DashboardCharts.swift in Sources */,
 				9E728A872BD368750045FF15 /* AdminDashboardResponse.swift in Sources */,
 				9E6447FC2BDAA004005446BA /* DashboardValueBoxView.swift in Sources */,
 				9E728A9E2BD37D080045FF15 /* APIConfig.swift in Sources */,
@@ -348,6 +365,7 @@
 				9E728AA42BD383330045FF15 /* APISpec.swift in Sources */,
 				9E4473DF2BDFB26F0028DD5B /* Array+Extension.swift in Sources */,
 				9E728AB62BD3AD9E0045FF15 /* Date+Ext.swift in Sources */,
+				9E4473E52BDFDC8D0028DD5B /* DashboardTopBar.swift in Sources */,
 				9E728A902BD368B70045FF15 /* APIService.swift in Sources */,
 				9E3DDE952BDD46F60003C234 /* DailyValueResponse.swift in Sources */,
 				9E544FE02BDBC76000212FF6 /* FamilyDistributionBoxView.swift in Sources */,
@@ -591,6 +609,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9E4473E62BDFE1600028DD5B /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E6447D72BDA4210005446BA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		9E4473E82BDFE18A0028DD5B /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E6447D72BDA4210005446BA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
 		9E6447D82BDA4210005446BA /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9E6447D72BDA4210005446BA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;

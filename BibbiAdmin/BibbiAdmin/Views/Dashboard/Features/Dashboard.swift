@@ -16,9 +16,11 @@ struct Dashboard {
     struct State: Equatable {
         var startDate: Date = Date()
         var endDate: Date = Date().addingTimeInterval(-50 * 86_400)
-        var adminDashboardResponse: AdminDashboardResponse?
-        var adminDailyDashboardResponse: AdminDailyDashboardResponse?
         var isLoading: Bool = false
+    
+        var dashboardTopBar: DashboardTopBar.State?
+        var dashboardAdmin: DashboardAdmin.State?
+        var dashboardCharts: DashboardCharts.State?
     }
     
     // MARK: - Action
@@ -28,6 +30,11 @@ struct Dashboard {
         case dashboardResponse(AdminDashboardResponse)
         case fetchDailyDashboardResponse
         case dailyDashboardResponse(AdminDailyDashboardResponse)
+        case isLoadingEnabled(Bool)
+        
+        case dashboardTopBar(DashboardTopBar.Action)
+        case dashboardAdmin(DashboardAdmin.Action)
+        case dashboardCharts(DashboardCharts.Action)
     }
     
     // MARK: - Dependencies
@@ -38,14 +45,15 @@ struct Dashboard {
         Reduce { state, action in
             switch action {
             case .onAppear:
-                state.isLoading = true
-                state.adminDashboardResponse = nil
-                state.adminDailyDashboardResponse = nil
-                return .merge(
+                state.dashboardAdmin = DashboardAdmin.State()
+                state.dashboardCharts = DashboardCharts.State()
+                return .concatenate(
+                    .send(.isLoadingEnabled(true)),
                     .send(.fetchDashboardResponse),
-                    .send(.fetchDailyDashboardResponse)
+                    .send(.fetchDailyDashboardResponse),
+                    .send(.isLoadingEnabled(false))
                 )
-
+                
             case .fetchDashboardResponse:
                 return .run { send in
                     await send(.dashboardResponse(
@@ -56,8 +64,9 @@ struct Dashboard {
                 }
                 
             case let .dashboardResponse(response):
-                state.isLoading = false
-                state.adminDashboardResponse = response
+                state.dashboardAdmin = DashboardAdmin.State(
+                    response: response
+                )
                 return .none
                 
             case .fetchDailyDashboardResponse:
@@ -79,10 +88,35 @@ struct Dashboard {
                 }
                 
             case let.dailyDashboardResponse(response):
-                state.isLoading = false
-                state.adminDailyDashboardResponse = response
+                state.dashboardCharts = DashboardCharts.State(
+                    response: response
+                )
+                return .none
+                
+            case let .isLoadingEnabled(enable):
+                state.dashboardTopBar = DashboardTopBar.State(
+                    isLoading: enable
+                )
+                return .none
+                
+            case .dashboardTopBar:
+                return .none
+                
+            case .dashboardAdmin:
+                return .none
+                
+            case .dashboardCharts:
                 return .none
             }
+        }
+        .ifLet(\.dashboardTopBar, action: \.dashboardTopBar) {
+            DashboardTopBar()
+        }
+        .ifLet(\.dashboardAdmin, action: \.dashboardAdmin) {
+            DashboardAdmin()
+        }
+        .ifLet(\.dashboardCharts, action: \.dashboardCharts) {
+            DashboardCharts()
         }
     }
 }
