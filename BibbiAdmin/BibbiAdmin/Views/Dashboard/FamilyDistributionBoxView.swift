@@ -11,7 +11,7 @@ import SwiftUI
 struct FamilyDistributionBoxView: View {
     
     // MARK: - Store
-    @Bindable var store: StoreOf<DashboardAdmin>
+    @Bindable var store: StoreOf<DashboardValue>
     
     // MARK: - Properties
     let gridItem: [GridItem] = [
@@ -24,7 +24,7 @@ struct FamilyDistributionBoxView: View {
     // MARK: - Body
     var body: some View {
         VStack(alignment: .leading) {
-            if let distributions = store.response?.familyMemberDistribution {
+            if let distributions = store.value?.familyMemberDistribution {
                 HStack(spacing: 3) {
                     Image(.smile)
                         .resizable()
@@ -84,12 +84,12 @@ struct FamilyDistributionBoxView: View {
 // MARK: - Preview
 #Preview {
     FamilyDistributionBoxView(
-        store: StoreOf<DashboardAdmin>(
-            initialState: DashboardAdmin.State(
-                response: .mock
+        store: StoreOf<DashboardValue>(
+            initialState: DashboardValue.State(
+                value: .mock
             )
         ) {
-            DashboardAdmin()
+            DashboardValue()
         }
     )
 }

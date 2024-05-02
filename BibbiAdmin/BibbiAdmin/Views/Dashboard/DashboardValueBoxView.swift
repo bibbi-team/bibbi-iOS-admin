@@ -11,14 +11,30 @@ import SwiftUI
 struct DashboardValueBoxView: View {
     
     // MARK: - Store
-    @Bindable var store: StoreOf<DashboardAdmin>
+    @Bindable var store: StoreOf<DashboardValue>
     
     // MARK: - Properties
     let type: DashboardValueType
     
+    // MARK: - Computed Properties
+    var value: DashboardValueResponse? {
+        switch type {
+        case .totalMember:
+            return store.value?.totalMember
+        case .totalFamily:
+            return store.value?.totalFamily
+        case .totalPost:
+            return store.value?.totalPost
+        case .totalComment:
+            return store.value?.totalComment
+        case .totalReaction:
+            return store.value?.totalReaction
+        }
+    }
+    
     // MARK: - Intializer
     init(
-        store: StoreOf<DashboardAdmin>,
+        store: StoreOf<DashboardValue>,
         of type: DashboardValueType
     ) {
         self.type = type
@@ -28,7 +44,7 @@ struct DashboardValueBoxView: View {
     // MARK: - Body
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
-            if let value = store.response?.totalFamily {
+            if let value = value {
                 HStack(spacing: 3) {
                     Image(type.resource)
                         .resizable()
@@ -73,11 +89,11 @@ struct DashboardValueBoxView: View {
 // MARK: - Preview
 #Preview {
     DashboardValueBoxView(
-        store: StoreOf<DashboardAdmin>(
-            initialState: DashboardAdmin.State(
-                response: .mock
+        store: StoreOf<DashboardValue>(
+            initialState: DashboardValue.State(
+                value: .mock
             )) {
-                DashboardAdmin()
+                DashboardValue()
             },
         of: .totalReaction
     )

@@ -9,12 +9,12 @@ import ComposableArchitecture
 import Foundation
 
 @Reducer
-struct DashboardAdmin {
+struct DashboardValue {
     
     // MARK: - State
     @ObservableState
     struct State: Equatable {
-        var response: AdminDashboardResponse?
+        var value: AdminDashboardResponse?
     }
     
     // MARK: - Action

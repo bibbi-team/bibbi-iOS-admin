@@ -14,15 +14,27 @@ struct DashboardChartsView: View {
     // MARK: - Store
     @Bindable var store: StoreOf<DashboardCharts>
     
+    // MARK: - Properties=
+    let type: DashboardChartsType
+    
+    // MARK: - Intializer
+    init(
+        store: StoreOf<DashboardCharts>,
+        of type: DashboardChartsType = .memberRegistration
+    ) {
+        self.type = type
+        self.store = store
+    }
+    
     // MARK: - Body
     var body: some View {
         VStack(alignment: .leading, spacing: 40) {
             HStack(spacing: 3) {
-                Image(.people)
+                Image(type.resource)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 15, height: 15)
-                Text("일별 가입자 수 추이")
+                Text(type.title)
                     .font(.system(size: 12))
                     .foregroundStyle(Color.gray200)
             }
@@ -54,7 +66,7 @@ struct DashboardChartsView: View {
                             .symbol {
                                 Circle()
                                     .fill(Color.mainYellow)
-                                    .frame(width: 16, height: 16)
+                                    .frame(width: 14, height: 14)
                             }
                             .lineStyle(.init(lineWidth: 0))
                             .foregroundStyle(Color.mainYellow)
@@ -77,7 +89,7 @@ struct DashboardChartsView: View {
                                 ) {
                                     if let value = store.selectedValue {
                                         VStack(alignment: .leading, spacing: 5) {
-                                            Text("가입자 수")
+                                            Text(type.annotation)
                                                 .font(.system(size: 12))
                                                 .foregroundStyle(Color.gray200)
                                             Text("\(value.count)")
@@ -100,10 +112,12 @@ struct DashboardChartsView: View {
                     .chartXAxis {
                         AxisMarks(preset: .aligned, values: .stride(by: .day)) { value in
                             if let date = value.as(Date.self) {
-                                AxisValueLabel(date.toFormatString(.MDd))
-                                    .font(.system(size: 18))
-                                    .foregroundStyle(Color.gray200)
-                                    .offset(x: 40, y: 16)
+                                if date <= Date() {
+                                    AxisValueLabel(date.toFormatString(.MDd))
+                                        .font(.system(size: 18))
+                                        .foregroundStyle(Color.gray200)
+                                        .offset(x: 40, y: 16)
+                                }
                                 if date.isToday {
                                     AxisValueLabel("Today")
                                         .font(.system(size: 14))
@@ -118,7 +132,7 @@ struct DashboardChartsView: View {
                         AxisMarks(preset: .automatic, position: .leading, values: .automatic(minimumStride: 50)) { value in
                             if let count = value.as(Int.self) {
                                 AxisValueLabel("\(count)")
-                                    .font(.system(size: 16))
+                                    .font(.system(size: 14))
                                     .foregroundStyle(Color.gray300)
                             }
                             AxisGridLine(stroke: .init(dash: [5], dashPhase: 3))
@@ -127,6 +141,7 @@ struct DashboardChartsView: View {
                     .chartXSelection(value: $store.rawSelectedDate)
                     .chartXScale(range: .plotDimension(padding: 15))
                     .padding(.vertical, 40)
+                    .padding(.horizontal)
                 } else {
                     VStack(spacing: 5) {
                         Image(.lyingDownBibbi)
@@ -145,6 +160,8 @@ struct DashboardChartsView: View {
             }
         }
     }
+    
+    // MARK: - Helpers
 
 }
 
@@ -159,6 +176,7 @@ struct DashboardChartsView: View {
                 )
         ) {
             DashboardCharts()
-        }
+        },
+        of: .memberRegistration
     )
 }
