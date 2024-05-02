@@ -20,6 +20,9 @@
 		9E544FE32BDBCEC000212FF6 /* RoundedBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E544FE22BDBCEC000212FF6 /* RoundedBoxStyle.swift */; };
 		9E5A9B522BE3B70F0020E9CC /* DashboardChartsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5A9B512BE3B70F0020E9CC /* DashboardChartsType.swift */; };
 		9E5A9B5C2BE3BACE0020E9CC /* DashboardChartsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5A9B5B2BE3BACE0020E9CC /* DashboardChartsClient.swift */; };
+		9E5A9B642BE3D6C00020E9CC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5A9B632BE3D6C00020E9CC /* SettingsView.swift */; };
+		9E5A9B662BE3DE1C0020E9CC /* Bundle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5A9B652BE3DE1C0020E9CC /* Bundle+Ext.swift */; };
+		9E5A9B682BE3E10B0020E9CC /* DashboardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5A9B672BE3E10B0020E9CC /* DashboardSettings.swift */; };
 		9E6447D92BDA4210005446BA /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 9E6447D82BDA4210005446BA /* ComposableArchitecture */; };
 		9E6447FC2BDAA004005446BA /* DashboardValueBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6447FB2BDAA004005446BA /* DashboardValueBoxView.swift */; };
 		9E6447FE2BDAA42D005446BA /* DashboardValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6447FD2BDAA42D005446BA /* DashboardValueType.swift */; };
@@ -61,6 +64,9 @@
 		9E544FE22BDBCEC000212FF6 /* RoundedBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBoxStyle.swift; sourceTree = "<group>"; };
 		9E5A9B512BE3B70F0020E9CC /* DashboardChartsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardChartsType.swift; sourceTree = "<group>"; };
 		9E5A9B5B2BE3BACE0020E9CC /* DashboardChartsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardChartsClient.swift; sourceTree = "<group>"; };
+		9E5A9B632BE3D6C00020E9CC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		9E5A9B652BE3DE1C0020E9CC /* Bundle+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Ext.swift"; sourceTree = "<group>"; };
+		9E5A9B672BE3E10B0020E9CC /* DashboardSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardSettings.swift; sourceTree = "<group>"; };
 		9E6447FB2BDAA004005446BA /* DashboardValueBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardValueBoxView.swift; sourceTree = "<group>"; };
 		9E6447FD2BDAA42D005446BA /* DashboardValueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardValueType.swift; sourceTree = "<group>"; };
 		9E728A6D2BD367510045FF15 /* BibbiAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BibbiAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +118,43 @@
 			path = Modifiers;
 			sourceTree = "<group>";
 		};
+		9E5A9B5F2BE3D6A50020E9CC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9E728ABA2BD3ECE00045FF15 /* DashboardTopBarView.swift */,
+				9E728A802BD368140045FF15 /* DashboardView.swift */,
+				9E6447FB2BDAA004005446BA /* DashboardValueBoxView.swift */,
+				9E544FDF2BDBC76000212FF6 /* FamilyDistributionBoxView.swift */,
+				9E3DDE922BDD43F20003C234 /* DashboardChartsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9E5A9B602BE3D6B00020E9CC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9E5A9B622BE3D6B80020E9CC /* Views */,
+				9E5A9B612BE3D6B40020E9CC /* Features */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		9E5A9B612BE3D6B40020E9CC /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				9E5A9B672BE3E10B0020E9CC /* DashboardSettings.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		9E5A9B622BE3D6B80020E9CC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9E5A9B632BE3D6C00020E9CC /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		9E728A642BD367510045FF15 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +196,7 @@
 		9E728A7E2BD367F40045FF15 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9E5A9B602BE3D6B00020E9CC /* Settings */,
 				9E728A7F2BD3680B0045FF15 /* Dashboard */,
 			);
 			path = Views;
@@ -162,11 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				9E728B5B2BDA16410045FF15 /* Features */,
-				9E728ABA2BD3ECE00045FF15 /* DashboardTopBarView.swift */,
-				9E728A802BD368140045FF15 /* DashboardView.swift */,
-				9E6447FB2BDAA004005446BA /* DashboardValueBoxView.swift */,
-				9E544FDF2BDBC76000212FF6 /* FamilyDistributionBoxView.swift */,
-				9E3DDE922BDD43F20003C234 /* DashboardChartsView.swift */,
+				9E5A9B5F2BE3D6A50020E9CC /* Views */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -194,6 +234,7 @@
 				9E728B542BDA0FB10045FF15 /* Data+Ext.swift */,
 				9E3DDE962BDD47540003C234 /* Dictionary+Ext.swift */,
 				9E4473DE2BDFB26F0028DD5B /* Array+Ext.swift */,
+				9E5A9B652BE3DE1C0020E9CC /* Bundle+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -349,6 +390,7 @@
 				9E4473E32BDFD7540028DD5B /* DashboardValue.swift in Sources */,
 				9E728AA02BD37D1D0045FF15 /* APIConfigType.swift in Sources */,
 				9E3DDE932BDD43F20003C234 /* DashboardChartsView.swift in Sources */,
+				9E5A9B662BE3DE1C0020E9CC /* Bundle+Ext.swift in Sources */,
 				9E728AB22BD395C30045FF15 /* AdminDailyDashboardResponse.swift in Sources */,
 				9E6447FE2BDAA42D005446BA /* DashboardValueType.swift in Sources */,
 				9E728AB02BD393BE0045FF15 /* DashboardDistributionResponse.swift in Sources */,
@@ -363,10 +405,12 @@
 				9E728B532BDA0AF60045FF15 /* Dashboard.swift in Sources */,
 				9E728B582BDA115A0045FF15 /* DashboardAPIClient.swift in Sources */,
 				9E728AAC2BD3922A0045FF15 /* DashboardAPIService.swift in Sources */,
+				9E5A9B682BE3E10B0020E9CC /* DashboardSettings.swift in Sources */,
 				9E4473E12BDFC5DA0028DD5B /* DashboardCharts.swift in Sources */,
 				9E728A872BD368750045FF15 /* AdminDashboardResponse.swift in Sources */,
 				9E6447FC2BDAA004005446BA /* DashboardValueBoxView.swift in Sources */,
 				9E728A9E2BD37D080045FF15 /* APIConfig.swift in Sources */,
+				9E5A9B642BE3D6C00020E9CC /* SettingsView.swift in Sources */,
 				9E728A8A2BD368850045FF15 /* String+Ext.swift in Sources */,
 				9E5A9B5C2BE3BACE0020E9CC /* DashboardChartsClient.swift in Sources */,
 				9E728AA42BD383330045FF15 /* APISpec.swift in Sources */,
