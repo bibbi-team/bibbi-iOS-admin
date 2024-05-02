@@ -12,12 +12,14 @@
 		9E3DDE972BDD47540003C234 /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3DDE962BDD47540003C234 /* Dictionary+Ext.swift */; };
 		9E4473DF2BDFB26F0028DD5B /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4473DE2BDFB26F0028DD5B /* Array+Ext.swift */; };
 		9E4473E12BDFC5DA0028DD5B /* DashboardCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4473E02BDFC5DA0028DD5B /* DashboardCharts.swift */; };
-		9E4473E32BDFD7540028DD5B /* DashboardAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4473E22BDFD7540028DD5B /* DashboardAdmin.swift */; };
+		9E4473E32BDFD7540028DD5B /* DashboardValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4473E22BDFD7540028DD5B /* DashboardValue.swift */; };
 		9E4473E52BDFDC8D0028DD5B /* DashboardTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4473E42BDFDC8D0028DD5B /* DashboardTopBar.swift */; };
 		9E4473E72BDFE1600028DD5B /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 9E4473E62BDFE1600028DD5B /* ComposableArchitecture */; };
 		9E4473E92BDFE18A0028DD5B /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 9E4473E82BDFE18A0028DD5B /* ComposableArchitecture */; };
 		9E544FE02BDBC76000212FF6 /* FamilyDistributionBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E544FDF2BDBC76000212FF6 /* FamilyDistributionBoxView.swift */; };
 		9E544FE32BDBCEC000212FF6 /* RoundedBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E544FE22BDBCEC000212FF6 /* RoundedBoxStyle.swift */; };
+		9E5A9B522BE3B70F0020E9CC /* DashboardChartsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5A9B512BE3B70F0020E9CC /* DashboardChartsType.swift */; };
+		9E5A9B5C2BE3BACE0020E9CC /* DashboardChartsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5A9B5B2BE3BACE0020E9CC /* DashboardChartsClient.swift */; };
 		9E6447D92BDA4210005446BA /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 9E6447D82BDA4210005446BA /* ComposableArchitecture */; };
 		9E6447FC2BDAA004005446BA /* DashboardValueBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6447FB2BDAA004005446BA /* DashboardValueBoxView.swift */; };
 		9E6447FE2BDAA42D005446BA /* DashboardValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6447FD2BDAA42D005446BA /* DashboardValueType.swift */; };
@@ -53,10 +55,12 @@
 		9E3DDE962BDD47540003C234 /* Dictionary+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Ext.swift"; sourceTree = "<group>"; };
 		9E4473DE2BDFB26F0028DD5B /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
 		9E4473E02BDFC5DA0028DD5B /* DashboardCharts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCharts.swift; sourceTree = "<group>"; };
-		9E4473E22BDFD7540028DD5B /* DashboardAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardAdmin.swift; sourceTree = "<group>"; };
+		9E4473E22BDFD7540028DD5B /* DashboardValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardValue.swift; sourceTree = "<group>"; };
 		9E4473E42BDFDC8D0028DD5B /* DashboardTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTopBar.swift; sourceTree = "<group>"; };
 		9E544FDF2BDBC76000212FF6 /* FamilyDistributionBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDistributionBoxView.swift; sourceTree = "<group>"; };
 		9E544FE22BDBCEC000212FF6 /* RoundedBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBoxStyle.swift; sourceTree = "<group>"; };
+		9E5A9B512BE3B70F0020E9CC /* DashboardChartsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardChartsType.swift; sourceTree = "<group>"; };
+		9E5A9B5B2BE3BACE0020E9CC /* DashboardChartsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardChartsClient.swift; sourceTree = "<group>"; };
 		9E6447FB2BDAA004005446BA /* DashboardValueBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardValueBoxView.swift; sourceTree = "<group>"; };
 		9E6447FD2BDAA42D005446BA /* DashboardValueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardValueType.swift; sourceTree = "<group>"; };
 		9E728A6D2BD367510045FF15 /* BibbiAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BibbiAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +180,7 @@
 				9E728AB12BD395C30045FF15 /* AdminDailyDashboardResponse.swift */,
 				9E3DDE942BDD46F60003C234 /* DailyValueResponse.swift */,
 				9E6447FD2BDAA42D005446BA /* DashboardValueType.swift */,
+				9E5A9B512BE3B70F0020E9CC /* DashboardChartsType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				9E728B572BDA115A0045FF15 /* DashboardAPIClient.swift */,
+				9E5A9B5B2BE3BACE0020E9CC /* DashboardChartsClient.swift */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -255,9 +261,9 @@
 			isa = PBXGroup;
 			children = (
 				9E728B522BDA0AF60045FF15 /* Dashboard.swift */,
-				9E4473E02BDFC5DA0028DD5B /* DashboardCharts.swift */,
-				9E4473E22BDFD7540028DD5B /* DashboardAdmin.swift */,
 				9E4473E42BDFDC8D0028DD5B /* DashboardTopBar.swift */,
+				9E4473E22BDFD7540028DD5B /* DashboardValue.swift */,
+				9E4473E02BDFC5DA0028DD5B /* DashboardCharts.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -340,7 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E4473E32BDFD7540028DD5B /* DashboardAdmin.swift in Sources */,
+				9E4473E32BDFD7540028DD5B /* DashboardValue.swift in Sources */,
 				9E728AA02BD37D1D0045FF15 /* APIConfigType.swift in Sources */,
 				9E3DDE932BDD43F20003C234 /* DashboardChartsView.swift in Sources */,
 				9E728AB22BD395C30045FF15 /* AdminDailyDashboardResponse.swift in Sources */,
@@ -362,6 +368,7 @@
 				9E6447FC2BDAA004005446BA /* DashboardValueBoxView.swift in Sources */,
 				9E728A9E2BD37D080045FF15 /* APIConfig.swift in Sources */,
 				9E728A8A2BD368850045FF15 /* String+Ext.swift in Sources */,
+				9E5A9B5C2BE3BACE0020E9CC /* DashboardChartsClient.swift in Sources */,
 				9E728AA42BD383330045FF15 /* APISpec.swift in Sources */,
 				9E4473DF2BDFB26F0028DD5B /* Array+Ext.swift in Sources */,
 				9E728AB62BD3AD9E0045FF15 /* Date+Ext.swift in Sources */,
@@ -369,6 +376,7 @@
 				9E728A902BD368B70045FF15 /* APIService.swift in Sources */,
 				9E3DDE952BDD46F60003C234 /* DailyValueResponse.swift in Sources */,
 				9E544FE02BDBC76000212FF6 /* FamilyDistributionBoxView.swift in Sources */,
+				9E5A9B522BE3B70F0020E9CC /* DashboardChartsType.swift in Sources */,
 				9E728ABB2BD3ECE00045FF15 /* DashboardTopBarView.swift in Sources */,
 				9E728AA62BD391AF0045FF15 /* URLRequest+Ext.swift in Sources */,
 				9E728A8D2BD368AC0045FF15 /* API.swift in Sources */,

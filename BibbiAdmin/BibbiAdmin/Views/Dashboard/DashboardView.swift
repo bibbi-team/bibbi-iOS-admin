@@ -24,60 +24,86 @@ struct DashboardView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 12) {
                     HStack(spacing: 12) {
-                        if let store = store.scope(state: \.dashboardAdmin, action: \.dashboardAdmin) {
+                        if let store = store.scope(state: \.dashboardValue, action: \.dashboardValue) {
                             DashboardValueBoxView(
                                 store: store,
                                 of: .totalMember
                             )
                             .roundedBoxStyle(height: 139)
-                            
+                        } else {
+                            // Placeholder View...
+                        }
+                        
+                        if let store = store.scope(state: \.dashboardValue, action: \.dashboardValue) {
                             DashboardValueBoxView(
                                 store: store,
                                 of: .totalFamily
                             )
                             .roundedBoxStyle(height: 139)
-                            
+                        } else {
+                            // Placeholder View...
+                        }
+                        
+                        if let store = store.scope(state: \.dashboardValue, action: \.dashboardValue) {
                             FamilyDistributionBoxView(
                                 store: store
                             )
                             .roundedBoxStyle(height: 139)
+                        } else {
+                            // Placeholder View...
                         }
-                    }
+                    } 
                     
-                    if let store = store.scope(state: \.dashboardCharts, action: \.dashboardCharts) {
+                    if let store = store.scope(state: \.dashboardDailyMember, action: \.dashboardDailyMember) {
                         DashboardChartsView(
-                            store: store
+                            store: store,
+                            of: .memberRegistration
                         )
                         .roundedBoxStyle(height: 288)
+                    } else {
+                        // Placeholder View...
                     }
                     
                     HStack(spacing: 12) {
-                        if let store = store.scope(state: \.dashboardAdmin, action: \.dashboardAdmin) {
+                        if let store = store.scope(state: \.dashboardValue, action: \.dashboardValue) {
                             DashboardValueBoxView(
                                 store: store,
                                 of: .totalPost
                             )
                             .roundedBoxStyle(height: 139)
-                            
+                        } else {
+                            // Placeholder View...
+                        }
+                        
+                        if let store = store.scope(state: \.dashboardValue, action: \.dashboardValue) {
                             DashboardValueBoxView(
                                 store: store,
                                 of: .totalComment
                             )
                             .roundedBoxStyle(height: 139)
-                            
+                        } else {
+                            // Placeholder View...
+                        }
+                        
+                        if let store = store.scope(state: \.dashboardValue, action: \.dashboardValue) {
                             DashboardValueBoxView(
                                 store: store,
                                 of: .totalReaction
                             )
                             .roundedBoxStyle(height: 139)
+                        } else {
+                            // Placeholder View...
                         }
                     }
                     
-                    if let store = store.scope(state: \.dashboardCharts, action: \.dashboardCharts) {
+                    if let store = store.scope(state: \.dashboardDailyPost, action: \.dashboardDailyPost) {
                         DashboardChartsView(
-                            store: store
+                            store: store,
+                            of: .postCreation
                         )
                         .roundedBoxStyle(height: 288)
+                    } else {
+                        // Placeholder View...
                     }
                 }
             }

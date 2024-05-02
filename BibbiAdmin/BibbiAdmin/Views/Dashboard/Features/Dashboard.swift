@@ -14,12 +14,13 @@ struct Dashboard {
     // MARK: - State
     @ObservableState
     struct State: Equatable {
-        var startDate: Date = Date()
-        var endDate: Date = Date().addingTimeInterval(-50 * 86_400)
+        var endDate: Date = Date()
+        var startDate: Date = Date().addingTimeInterval(-50 * 86_400)
     
         var dashboardTopBar: DashboardTopBar.State?
-        var dashboardAdmin: DashboardAdmin.State?
-        var dashboardCharts: DashboardCharts.State?
+        var dashboardValue: DashboardValue.State?
+        var dashboardDailyMember: DashboardCharts.State?
+        var dashboardDailyPost: DashboardCharts.State?
     }
     
     // MARK: - Action
@@ -29,11 +30,11 @@ struct Dashboard {
         case dashboardResponse(AdminDashboardResponse)
         case fetchDailyDashboardResponse
         case dailyDashboardResponse(AdminDailyDashboardResponse)
-        case isLoadingEnabled(Bool)
         
         case dashboardTopBar(DashboardTopBar.Action)
-        case dashboardAdmin(DashboardAdmin.Action)
-        case dashboardCharts(DashboardCharts.Action)
+        case dashboardValue(DashboardValue .Action)
+        case dashboardDailyMember(DashboardCharts.Action)
+        case dashboardDailyPost(DashboardCharts.Action)
     }
     
     // MARK: - Dependencies
@@ -44,13 +45,10 @@ struct Dashboard {
         Reduce { state, action in
             switch action {
             case .onAppear:
-                state.dashboardAdmin = DashboardAdmin.State()
-                state.dashboardCharts = DashboardCharts.State()
-                return .concatenate(
-                    .send(.isLoadingEnabled(true)),
+                state.dashboardTopBar = DashboardTopBar.State()
+                return .merge(
                     .send(.fetchDashboardResponse),
-                    .send(.fetchDailyDashboardResponse),
-                    .send(.isLoadingEnabled(false))
+                    .send(.fetchDailyDashboardResponse)
                 )
                 
             case .fetchDashboardResponse:
@@ -63,8 +61,8 @@ struct Dashboard {
                 }
                 
             case let .dashboardResponse(response):
-                state.dashboardAdmin = DashboardAdmin.State(
-                    response: response
+                state.dashboardValue = DashboardValue.State(
+                    value: response
                 )
                 return .none
                 
@@ -87,34 +85,31 @@ struct Dashboard {
                 }
                 
             case let.dailyDashboardResponse(response):
-                state.dashboardCharts = DashboardCharts.State(
+                state.dashboardDailyMember = DashboardCharts.State(
                     values: response.dailyMemberValues
                 )
-                return .none
-                
-            case let .isLoadingEnabled(enable):
-                state.dashboardTopBar = DashboardTopBar.State(
-                    isLoading: enable
+                state.dashboardDailyPost = DashboardCharts.State(
+                    values: response.dailyPostValues
                 )
                 return .none
                 
-            case .dashboardTopBar:
-                return .none
-                
-            case .dashboardAdmin:
-                return .none
-                
-            case .dashboardCharts:
+            case .dashboardTopBar,
+                 .dashboardValue,
+                 .dashboardDailyMember,
+                 .dashboardDailyPost:
                 return .none
             }
         }
         .ifLet(\.dashboardTopBar, action: \.dashboardTopBar) {
             DashboardTopBar()
         }
-        .ifLet(\.dashboardAdmin, action: \.dashboardAdmin) {
-            DashboardAdmin()
+        .ifLet(\.dashboardValue, action: \.dashboardValue) {
+            DashboardValue()
         }
-        .ifLet(\.dashboardCharts, action: \.dashboardCharts) {
+        .ifLet(\.dashboardDailyMember, action: \.dashboardDailyMember) {
+            DashboardCharts()
+        }
+        .ifLet(\.dashboardDailyPost, action: \.dashboardDailyPost) {
             DashboardCharts()
         }
     }

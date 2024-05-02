@@ -9,6 +9,6 @@ import Foundation
 
 struct APIConfig: APIConfigType {
     var hostApi: String {
-        "https://dev.api.no5ing.kr/v1/admin"
+        "https://api.no5ing.kr/v1/admin"
     }
 }

@@ -59,3 +59,10 @@ extension Date {
         return true
     }
 }
+
+extension Date {
+    var endOfDate: Date {
+        let calendar = Calendar.autoupdatingCurrent
+        return calendar.date(byAdding: .day, value: 1, to: self)!
+    }
+}

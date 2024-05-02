@@ -21,6 +21,7 @@ struct DashboardCharts {
     }
     
     // MARK: - Dependencies
+    @Dependency(\.charts) var charts
     @Dependency(\.calendar) var calendar
     
     // MARK: - Action
@@ -34,12 +35,12 @@ struct DashboardCharts {
         Reduce { state, action in
             switch action {
             case .binding(\.rawSelectedDate):
-                state.selectedDate = checkVaildSelection(
+                state.selectedDate = charts.checkVaildSelection(
                     on: state.rawSelectedDate,
                     values: state.values
                 )
-                state.selectedValue = checkVaildValue(
-                    on: state.selectedDate,
+                state.selectedValue = charts.checkVaildValue(
+                    on: state.rawSelectedDate,
                     values: state.values
                 )
                 return .none
@@ -50,36 +51,4 @@ struct DashboardCharts {
         }
         
     }
-}
-
-extension DashboardCharts {
-    
-    private func endOfDate(_ date: Date) -> Date {
-        calendar.date(byAdding: .day, value: 1, to: date)!
-    }
-    
-    private func checkVaildSelection(on rawSelctedDate: Date?, values: [DailyValueResponse]?) -> Date? {
-        // 선택한 날짜(X축)가 오늘~다음 날에 포함되는 Values가 있는지 확인
-        if let date = rawSelctedDate {
-            return values?.first(where: { response in
-                let endOfDate = self.endOfDate(response.date)
-
-                return (response.date...endOfDate).contains(date)
-            })?.date
-        }
-    
-        return nil
-    }
-    
-    private func checkVaildValue(on selectedDate: Date?, values: [DailyValueResponse]?) -> DailyValueResponse? {
-        guard let selectedDate = selectedDate, let values = values,
-              let value = values.first(where: { value in
-            value.date.isEqual(with: selectedDate)
-        }) else {
-            return nil
-        }
-
-        return value
-    }
-    
 }
