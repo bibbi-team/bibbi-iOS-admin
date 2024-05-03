@@ -51,6 +51,8 @@
 		9E728B552BDA0FB10045FF15 /* Data+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728B542BDA0FB10045FF15 /* Data+Ext.swift */; };
 		9E728B582BDA115A0045FF15 /* DashboardAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728B572BDA115A0045FF15 /* DashboardAPIClient.swift */; };
 		9EE7DB0A2BE48FA50060CD3D /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7DB092BE48FA50060CD3D /* Shimmer.swift */; };
+		9EE7DB0D2BE498360060CD3D /* ValueBoxPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7DB0C2BE498360060CD3D /* ValueBoxPlaceholderView.swift */; };
+		9EE7DB0F2BE49B970060CD3D /* ChartsPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7DB0E2BE49B970060CD3D /* ChartsPlaceholderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +98,8 @@
 		9E728B542BDA0FB10045FF15 /* Data+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Ext.swift"; sourceTree = "<group>"; };
 		9E728B572BDA115A0045FF15 /* DashboardAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardAPIClient.swift; sourceTree = "<group>"; };
 		9EE7DB092BE48FA50060CD3D /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
+		9EE7DB0C2BE498360060CD3D /* ValueBoxPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueBoxPlaceholderView.swift; sourceTree = "<group>"; };
+		9EE7DB0E2BE49B970060CD3D /* ChartsPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsPlaceholderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +203,7 @@
 		9E728A7E2BD367F40045FF15 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9EE7DB0B2BE498230060CD3D /* Placeholder */,
 				9E5A9B602BE3D6B00020E9CC /* Settings */,
 				9E728A7F2BD3680B0045FF15 /* Dashboard */,
 			);
@@ -320,6 +325,15 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		9EE7DB0B2BE498230060CD3D /* Placeholder */ = {
+			isa = PBXGroup;
+			children = (
+				9EE7DB0C2BE498360060CD3D /* ValueBoxPlaceholderView.swift */,
+				9EE7DB0E2BE49B970060CD3D /* ChartsPlaceholderView.swift */,
+			);
+			path = Placeholder;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -402,12 +416,14 @@
 				9E728AA02BD37D1D0045FF15 /* APIConfigType.swift in Sources */,
 				9E3DDE932BDD43F20003C234 /* DashboardChartsView.swift in Sources */,
 				9E5A9B662BE3DE1C0020E9CC /* Bundle+Ext.swift in Sources */,
+				9EE7DB0D2BE498360060CD3D /* ValueBoxPlaceholderView.swift in Sources */,
 				9E728AB22BD395C30045FF15 /* AdminDailyDashboardResponse.swift in Sources */,
 				9E6447FE2BDAA42D005446BA /* DashboardValueType.swift in Sources */,
 				9E728AB02BD393BE0045FF15 /* DashboardDistributionResponse.swift in Sources */,
 				9EE7DB0A2BE48FA50060CD3D /* Shimmer.swift in Sources */,
 				9E728AA22BD37DD60045FF15 /* APIServiceType.swift in Sources */,
 				9E728B552BDA0FB10045FF15 /* Data+Ext.swift in Sources */,
+				9EE7DB0F2BE49B970060CD3D /* ChartsPlaceholderView.swift in Sources */,
 				9E728AAA2BD392210045FF15 /* DashboardAPIs.swift in Sources */,
 				9E728A942BD36FC00045FF15 /* BibbiString.swift in Sources */,
 				9E3DDE972BDD47540003C234 /* Dictionary+Ext.swift in Sources */,

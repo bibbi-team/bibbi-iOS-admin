@@ -97,5 +97,5 @@ struct DashboardValueBoxView: View {
             },
         of: .totalReaction
     )
-    .previewLayout(.sizeThatFits)
+    .roundedBoxStyle(height: 139)
 }

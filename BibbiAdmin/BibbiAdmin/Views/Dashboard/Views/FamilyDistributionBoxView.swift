@@ -92,4 +92,5 @@ struct FamilyDistributionBoxView: View {
             DashboardValue()
         }
     )
+    .roundedBoxStyle(height: 139)
 }
