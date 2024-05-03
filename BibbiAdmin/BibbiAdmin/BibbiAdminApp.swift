@@ -12,18 +12,23 @@ import SwiftUI
 struct BibbiAdminApp: App {
     
     // MARK: - Store
-    static let store = StoreOf<Dashboard>(initialState: Dashboard.State()) {
+    static let dashboardStore = StoreOf<Dashboard>(initialState: Dashboard.State()) {
         Dashboard()
+            ._printChanges()
+    }
+    static let settingsStore = StoreOf<DashboardSettings>(initialState: DashboardSettings.State()) {
+        DashboardSettings()
             ._printChanges()
     }
     
     // MARK: - Properties
     private var windowWidthSize: CGFloat = 768.0
+    private var settingsWidthSize: CGFloat = 514.0
     
     // MARK: - Body
     var body: some Scene {
         WindowGroup {
-            DashboardView(store: BibbiAdminApp.store)
+            DashboardView(store: BibbiAdminApp.dashboardStore)
                 #if os(macOS)
                 .frame(
                     minWidth: windowWidthSize,
@@ -36,5 +41,18 @@ struct BibbiAdminApp: App {
         .windowStyle(.hiddenTitleBar)
         .windowResizability(.contentSize)
         #endif
+        
+        #if os(macOS)
+        Settings {
+            SettingsView(store: BibbiAdminApp.settingsStore)
+                .frame(
+                    minWidth: settingsWidthSize,
+                    maxWidth: settingsWidthSize
+                )
+        }
+        .windowStyle(.hiddenTitleBar)
+        .windowResizability(.contentSize)
+        #endif
+        
     }
 }
