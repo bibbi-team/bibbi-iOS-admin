@@ -26,6 +26,7 @@ struct Dashboard {
     // MARK: - Action
     enum Action {
         case onAppear
+        case refresh
         case fetchDashboardResponse
         case dashboardResponse(AdminDashboardResponse)
         case fetchDailyDashboardResponse
@@ -46,6 +47,15 @@ struct Dashboard {
             switch action {
             case .onAppear:
                 state.dashboardTopBar = DashboardTopBar.State()
+                return .merge(
+                    .send(.fetchDashboardResponse),
+                    .send(.fetchDailyDashboardResponse)
+                )
+                
+            case .refresh:
+                state.dashboardValue = nil
+                state.dashboardDailyMember = nil
+                state.dashboardDailyPost = nil
                 return .merge(
                     .send(.fetchDashboardResponse),
                     .send(.fetchDailyDashboardResponse)

@@ -38,6 +38,14 @@ struct BibbiAdminApp: App {
                 .background(Color.bibbiBlack)
         }
         #if os(macOS)
+        .commands {
+            CommandMenu("대시보드") {
+                Button("새로고침") {
+                    BibbiAdminApp.dashboardStore.send(.refresh)
+                }
+                .keyboardShortcut("r", modifiers: .command)
+            }
+        }
         .windowStyle(.hiddenTitleBar)
         .windowResizability(.contentSize)
         #endif
