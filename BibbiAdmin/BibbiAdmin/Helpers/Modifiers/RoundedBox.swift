@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RoundedBoxStyle: ViewModifier {
+struct RoundedBox: ViewModifier {
     
     // MARK: - Properties
     let _height: CGFloat
@@ -35,6 +35,6 @@ struct RoundedBoxStyle: ViewModifier {
 // MARK: - Extensions
 extension View {
     func roundedBoxStyle(height: CGFloat) -> some View {
-        modifier(RoundedBoxStyle(height: height))
+        modifier(RoundedBox(height: height))
     }
 }

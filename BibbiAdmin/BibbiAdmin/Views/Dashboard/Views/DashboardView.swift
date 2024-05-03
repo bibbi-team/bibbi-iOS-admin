@@ -31,7 +31,8 @@ struct DashboardView: View {
                             )
                             .roundedBoxStyle(height: 139)
                         } else {
-                            // Placeholder View...
+                            ValueBoxPlaceholderView()
+                                .roundedBoxStyle(height: 139)
                         }
                         
                         if let store = store.scope(state: \.dashboardValue, action: \.dashboardValue) {
@@ -41,7 +42,8 @@ struct DashboardView: View {
                             )
                             .roundedBoxStyle(height: 139)
                         } else {
-                            // Placeholder View...
+                            ValueBoxPlaceholderView()
+                                .roundedBoxStyle(height: 139)
                         }
                         
                         if let store = store.scope(state: \.dashboardValue, action: \.dashboardValue) {
@@ -50,7 +52,8 @@ struct DashboardView: View {
                             )
                             .roundedBoxStyle(height: 139)
                         } else {
-                            // Placeholder View...
+                            ValueBoxPlaceholderView()
+                                .roundedBoxStyle(height: 139)
                         }
                     } 
                     
@@ -61,7 +64,8 @@ struct DashboardView: View {
                         )
                         .roundedBoxStyle(height: 288)
                     } else {
-                        // Placeholder View...
+                        ChartsPlaceholderView()
+                            .roundedBoxStyle(height: 288)
                     }
                     
                     HStack(spacing: 12) {
@@ -72,7 +76,8 @@ struct DashboardView: View {
                             )
                             .roundedBoxStyle(height: 139)
                         } else {
-                            // Placeholder View...
+                            ValueBoxPlaceholderView()
+                                .roundedBoxStyle(height: 139)
                         }
                         
                         if let store = store.scope(state: \.dashboardValue, action: \.dashboardValue) {
@@ -82,7 +87,8 @@ struct DashboardView: View {
                             )
                             .roundedBoxStyle(height: 139)
                         } else {
-                            // Placeholder View...
+                            ValueBoxPlaceholderView()
+                                .roundedBoxStyle(height: 139)
                         }
                         
                         if let store = store.scope(state: \.dashboardValue, action: \.dashboardValue) {
@@ -92,7 +98,8 @@ struct DashboardView: View {
                             )
                             .roundedBoxStyle(height: 139)
                         } else {
-                            // Placeholder View...
+                            ValueBoxPlaceholderView()
+                                .roundedBoxStyle(height: 139)
                         }
                     }
                     
@@ -103,7 +110,8 @@ struct DashboardView: View {
                         )
                         .roundedBoxStyle(height: 288)
                     } else {
-                        // Placeholder View...
+                        ChartsPlaceholderView()
+                            .roundedBoxStyle(height: 288)
                     }
                 }
             }

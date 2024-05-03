@@ -179,4 +179,5 @@ struct DashboardChartsView: View {
         },
         of: .memberRegistration
     )
+    .roundedBoxStyle(height: 288)
 }

@@ -17,7 +17,7 @@
 		9E4473E72BDFE1600028DD5B /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 9E4473E62BDFE1600028DD5B /* ComposableArchitecture */; };
 		9E4473E92BDFE18A0028DD5B /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 9E4473E82BDFE18A0028DD5B /* ComposableArchitecture */; };
 		9E544FE02BDBC76000212FF6 /* FamilyDistributionBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E544FDF2BDBC76000212FF6 /* FamilyDistributionBoxView.swift */; };
-		9E544FE32BDBCEC000212FF6 /* RoundedBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E544FE22BDBCEC000212FF6 /* RoundedBoxStyle.swift */; };
+		9E544FE32BDBCEC000212FF6 /* RoundedBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E544FE22BDBCEC000212FF6 /* RoundedBox.swift */; };
 		9E5A9B522BE3B70F0020E9CC /* DashboardChartsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5A9B512BE3B70F0020E9CC /* DashboardChartsType.swift */; };
 		9E5A9B5C2BE3BACE0020E9CC /* DashboardChartsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5A9B5B2BE3BACE0020E9CC /* DashboardChartsClient.swift */; };
 		9E5A9B642BE3D6C00020E9CC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5A9B632BE3D6C00020E9CC /* SettingsView.swift */; };
@@ -50,6 +50,9 @@
 		9E728B532BDA0AF60045FF15 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728B522BDA0AF60045FF15 /* Dashboard.swift */; };
 		9E728B552BDA0FB10045FF15 /* Data+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728B542BDA0FB10045FF15 /* Data+Ext.swift */; };
 		9E728B582BDA115A0045FF15 /* DashboardAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728B572BDA115A0045FF15 /* DashboardAPIClient.swift */; };
+		9EE7DB0A2BE48FA50060CD3D /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7DB092BE48FA50060CD3D /* Shimmer.swift */; };
+		9EE7DB0D2BE498360060CD3D /* ValueBoxPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7DB0C2BE498360060CD3D /* ValueBoxPlaceholderView.swift */; };
+		9EE7DB0F2BE49B970060CD3D /* ChartsPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7DB0E2BE49B970060CD3D /* ChartsPlaceholderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,7 +64,7 @@
 		9E4473E22BDFD7540028DD5B /* DashboardValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardValue.swift; sourceTree = "<group>"; };
 		9E4473E42BDFDC8D0028DD5B /* DashboardTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTopBar.swift; sourceTree = "<group>"; };
 		9E544FDF2BDBC76000212FF6 /* FamilyDistributionBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDistributionBoxView.swift; sourceTree = "<group>"; };
-		9E544FE22BDBCEC000212FF6 /* RoundedBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBoxStyle.swift; sourceTree = "<group>"; };
+		9E544FE22BDBCEC000212FF6 /* RoundedBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBox.swift; sourceTree = "<group>"; };
 		9E5A9B512BE3B70F0020E9CC /* DashboardChartsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardChartsType.swift; sourceTree = "<group>"; };
 		9E5A9B5B2BE3BACE0020E9CC /* DashboardChartsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardChartsClient.swift; sourceTree = "<group>"; };
 		9E5A9B632BE3D6C00020E9CC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -94,6 +97,9 @@
 		9E728B522BDA0AF60045FF15 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		9E728B542BDA0FB10045FF15 /* Data+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Ext.swift"; sourceTree = "<group>"; };
 		9E728B572BDA115A0045FF15 /* DashboardAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardAPIClient.swift; sourceTree = "<group>"; };
+		9EE7DB092BE48FA50060CD3D /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
+		9EE7DB0C2BE498360060CD3D /* ValueBoxPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueBoxPlaceholderView.swift; sourceTree = "<group>"; };
+		9EE7DB0E2BE49B970060CD3D /* ChartsPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsPlaceholderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +119,8 @@
 		9E544FE12BDBCE9D00212FF6 /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
-				9E544FE22BDBCEC000212FF6 /* RoundedBoxStyle.swift */,
+				9EE7DB092BE48FA50060CD3D /* Shimmer.swift */,
+				9E544FE22BDBCEC000212FF6 /* RoundedBox.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -196,6 +203,7 @@
 		9E728A7E2BD367F40045FF15 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9EE7DB0B2BE498230060CD3D /* Placeholder */,
 				9E5A9B602BE3D6B00020E9CC /* Settings */,
 				9E728A7F2BD3680B0045FF15 /* Dashboard */,
 			);
@@ -317,6 +325,15 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		9EE7DB0B2BE498230060CD3D /* Placeholder */ = {
+			isa = PBXGroup;
+			children = (
+				9EE7DB0C2BE498360060CD3D /* ValueBoxPlaceholderView.swift */,
+				9EE7DB0E2BE49B970060CD3D /* ChartsPlaceholderView.swift */,
+			);
+			path = Placeholder;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -399,16 +416,19 @@
 				9E728AA02BD37D1D0045FF15 /* APIConfigType.swift in Sources */,
 				9E3DDE932BDD43F20003C234 /* DashboardChartsView.swift in Sources */,
 				9E5A9B662BE3DE1C0020E9CC /* Bundle+Ext.swift in Sources */,
+				9EE7DB0D2BE498360060CD3D /* ValueBoxPlaceholderView.swift in Sources */,
 				9E728AB22BD395C30045FF15 /* AdminDailyDashboardResponse.swift in Sources */,
 				9E6447FE2BDAA42D005446BA /* DashboardValueType.swift in Sources */,
 				9E728AB02BD393BE0045FF15 /* DashboardDistributionResponse.swift in Sources */,
+				9EE7DB0A2BE48FA50060CD3D /* Shimmer.swift in Sources */,
 				9E728AA22BD37DD60045FF15 /* APIServiceType.swift in Sources */,
 				9E728B552BDA0FB10045FF15 /* Data+Ext.swift in Sources */,
+				9EE7DB0F2BE49B970060CD3D /* ChartsPlaceholderView.swift in Sources */,
 				9E728AAA2BD392210045FF15 /* DashboardAPIs.swift in Sources */,
 				9E728A942BD36FC00045FF15 /* BibbiString.swift in Sources */,
 				9E3DDE972BDD47540003C234 /* Dictionary+Ext.swift in Sources */,
 				9E728A812BD368140045FF15 /* DashboardView.swift in Sources */,
-				9E544FE32BDBCEC000212FF6 /* RoundedBoxStyle.swift in Sources */,
+				9E544FE32BDBCEC000212FF6 /* RoundedBox.swift in Sources */,
 				9E728A712BD367510045FF15 /* BibbiAdminApp.swift in Sources */,
 				9E728B532BDA0AF60045FF15 /* Dashboard.swift in Sources */,
 				9E728B582BDA115A0045FF15 /* DashboardAPIClient.swift in Sources */,
