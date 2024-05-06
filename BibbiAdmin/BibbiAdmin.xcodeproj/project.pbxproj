@@ -625,7 +625,7 @@
 				DEVELOPMENT_TEAM = P9P4WJ623F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "삐삐";
+				INFOPLIST_KEY_CFBundleDisplayName = "삐삐 대시보드";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -663,7 +663,7 @@
 				DEVELOPMENT_TEAM = P9P4WJ623F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "삐삐";
+				INFOPLIST_KEY_CFBundleDisplayName = "삐삐 대시보드";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

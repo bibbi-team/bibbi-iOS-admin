@@ -125,7 +125,9 @@ struct DashboardView: View {
                 store: store,
                 of: .member
             )
+            #if os(macOS)
             .frame(width: 600, height: 500)
+            #endif
         }
         .sheet(
             item: $store.scope(state: \.dailyPostList, action: \.dailyPostList)
@@ -134,7 +136,9 @@ struct DashboardView: View {
                 store: store,
                 of: .post
             )
+            #if os(macOS)
             .frame(width: 600, height: 500)
+            #endif
         }
         .onAppear {
             store.send(.onAppear)

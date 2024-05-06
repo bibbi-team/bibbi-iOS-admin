@@ -45,6 +45,10 @@ struct DashboardChartsView: View {
                 } label: {
                     Image(systemName: "list.bullet")
                 }
+                #if os(iOS)
+                .tint(Color.mainYellow)
+                #endif
+                .fontWeight(.semibold)
 
             }
             

@@ -14,7 +14,7 @@ enum ChartsListType {
     var header: String {
         switch self {
         case .member:
-            return "사용자 수"
+            return "가입자 수"
         case .post:
             return "게시물 수"
         }

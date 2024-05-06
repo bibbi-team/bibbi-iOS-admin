@@ -65,9 +65,17 @@ struct DashboardValueBoxView: View {
                     Spacer()
                     
                     HStack(spacing: 2) {
-                        formattedPercentBetweenYesturdayText(value.percentBetweenYesterday)
-                            .font(.system(size: 10, weight: .bold))
-                            .foregroundStyle(value.percentBetweenYesterday >= 0.0 ? Color.graphicGreen : Color.warningRed)
+                        Group {
+                            if value.percentBetweenYesterday == 0.0 {
+                                Text("=0")
+                                    .foregroundStyle(Color.secondary)
+                            } else {
+                                formattedPercentBetweenYesturdayText(value.percentBetweenYesterday)
+                                    .foregroundStyle(value.percentBetweenYesterday >= 0.0 ? Color.graphicGreen : Color.warningRed)
+                            }
+                        }
+                        .font(.system(size: 10, weight: .bold))
+                        
                         Text("Yesturday")
                             .font(.system(size: 9))
                             .foregroundStyle(Color.gray400)
@@ -81,7 +89,8 @@ struct DashboardValueBoxView: View {
     
     @ViewBuilder
     private func formattedPercentBetweenYesturdayText(_ value: Double) -> some View {
-        let _str = String(format: "%.1f", value)
+        let _value = abs(value)
+        let _str = String(format: "%.1f", _value)
         Text("\(value >= 0.0 ? "▲" : "▼")\(_str)%")
     }
 }
