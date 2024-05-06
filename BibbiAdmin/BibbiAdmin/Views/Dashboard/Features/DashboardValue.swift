@@ -15,6 +15,22 @@ struct DashboardValue {
     @ObservableState
     struct State: Equatable {
         var value: AdminDashboardResponse?
+        
+        func value(of type: DashboardValueType) -> DashboardValueResponse? {
+            switch type {
+            case .totalMember:
+                return value?.totalMember
+            case .totalFamily:
+                return value?.totalFamily
+            case .totalPost:
+                return value?.totalPost
+            case .totalComment:
+                return value?.totalComment
+            case .totalReaction:
+                return value?.totalReaction
+            }
+        }
+    
     }
     
     // MARK: - Action
