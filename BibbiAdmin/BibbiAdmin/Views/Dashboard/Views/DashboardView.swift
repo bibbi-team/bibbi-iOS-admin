@@ -18,7 +18,7 @@ struct DashboardView: View {
         VStack(spacing: 0) {
             if let store = store.scope(state: \.dashboardTopBar, action: \.dashboardTopBar) {
                 DashboardTopBarView(store: store)
-                    .padding(.top)
+                    .padding(.vertical)
             }
             
             ScrollView(.vertical, showsIndicators: false) {
@@ -125,11 +125,11 @@ struct DashboardView: View {
                         .tint(Color.mainYellow)
                         #endif
                     }
-                    .padding(.top)
+                    .padding(.vertical)
                 }
             }
             .padding(.horizontal, 40)
-            .safeAreaPadding(.vertical)
+            .safeAreaPadding(.bottom)
         }
         .sheet(
             item: $store.scope(state: \.dailyMemberList, action: \.dailyMemberList)
