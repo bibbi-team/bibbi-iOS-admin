@@ -50,6 +50,9 @@
 		9E728B532BDA0AF60045FF15 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728B522BDA0AF60045FF15 /* Dashboard.swift */; };
 		9E728B552BDA0FB10045FF15 /* Data+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728B542BDA0FB10045FF15 /* Data+Ext.swift */; };
 		9E728B582BDA115A0045FF15 /* DashboardAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E728B572BDA115A0045FF15 /* DashboardAPIClient.swift */; };
+		9E9C9BD72BE89A9E001CFF7F /* ChartsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C9BD62BE89A9E001CFF7F /* ChartsListView.swift */; };
+		9E9C9BD92BE89AAE001CFF7F /* ChartsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C9BD82BE89AAE001CFF7F /* ChartsList.swift */; };
+		9E9C9BDB2BE8A042001CFF7F /* ChartsListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C9BDA2BE8A042001CFF7F /* ChartsListType.swift */; };
 		9EE7DB0A2BE48FA50060CD3D /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7DB092BE48FA50060CD3D /* Shimmer.swift */; };
 		9EE7DB0D2BE498360060CD3D /* ValueBoxPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7DB0C2BE498360060CD3D /* ValueBoxPlaceholderView.swift */; };
 		9EE7DB0F2BE49B970060CD3D /* ChartsPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7DB0E2BE49B970060CD3D /* ChartsPlaceholderView.swift */; };
@@ -97,6 +100,9 @@
 		9E728B522BDA0AF60045FF15 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		9E728B542BDA0FB10045FF15 /* Data+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Ext.swift"; sourceTree = "<group>"; };
 		9E728B572BDA115A0045FF15 /* DashboardAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardAPIClient.swift; sourceTree = "<group>"; };
+		9E9C9BD62BE89A9E001CFF7F /* ChartsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsListView.swift; sourceTree = "<group>"; };
+		9E9C9BD82BE89AAE001CFF7F /* ChartsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsList.swift; sourceTree = "<group>"; };
+		9E9C9BDA2BE8A042001CFF7F /* ChartsListType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsListType.swift; sourceTree = "<group>"; };
 		9EE7DB092BE48FA50060CD3D /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
 		9EE7DB0C2BE498360060CD3D /* ValueBoxPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueBoxPlaceholderView.swift; sourceTree = "<group>"; };
 		9EE7DB0E2BE49B970060CD3D /* ChartsPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsPlaceholderView.swift; sourceTree = "<group>"; };
@@ -203,6 +209,7 @@
 		9E728A7E2BD367F40045FF15 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9E9C9BD32BE89A86001CFF7F /* DashboardDetail */,
 				9EE7DB0B2BE498230060CD3D /* Placeholder */,
 				9E5A9B602BE3D6B00020E9CC /* Settings */,
 				9E728A7F2BD3680B0045FF15 /* Dashboard */,
@@ -316,11 +323,37 @@
 			path = Features;
 			sourceTree = "<group>";
 		};
+		9E9C9BD32BE89A86001CFF7F /* DashboardDetail */ = {
+			isa = PBXGroup;
+			children = (
+				9E9C9BD52BE89A90001CFF7F /* Views */,
+				9E9C9BD42BE89A8B001CFF7F /* Features */,
+			);
+			path = DashboardDetail;
+			sourceTree = "<group>";
+		};
+		9E9C9BD42BE89A8B001CFF7F /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				9E9C9BD82BE89AAE001CFF7F /* ChartsList.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		9E9C9BD52BE89A90001CFF7F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9E9C9BD62BE89A9E001CFF7F /* ChartsListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		9EE7DB082BE482DE0060CD3D /* Enums */ = {
 			isa = PBXGroup;
 			children = (
 				9E6447FD2BDAA42D005446BA /* DashboardValueType.swift */,
 				9E5A9B512BE3B70F0020E9CC /* DashboardChartsType.swift */,
+				9E9C9BDA2BE8A042001CFF7F /* ChartsListType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -433,6 +466,7 @@
 				9E728B532BDA0AF60045FF15 /* Dashboard.swift in Sources */,
 				9E728B582BDA115A0045FF15 /* DashboardAPIClient.swift in Sources */,
 				9E728AAC2BD3922A0045FF15 /* DashboardAPIService.swift in Sources */,
+				9E9C9BD72BE89A9E001CFF7F /* ChartsListView.swift in Sources */,
 				9E5A9B682BE3E10B0020E9CC /* DashboardSettings.swift in Sources */,
 				9E4473E12BDFC5DA0028DD5B /* DashboardCharts.swift in Sources */,
 				9E728A872BD368750045FF15 /* AdminDashboardResponse.swift in Sources */,
@@ -442,6 +476,7 @@
 				9E728A8A2BD368850045FF15 /* String+Ext.swift in Sources */,
 				9E5A9B5C2BE3BACE0020E9CC /* DashboardChartsClient.swift in Sources */,
 				9E728AA42BD383330045FF15 /* APISpec.swift in Sources */,
+				9E9C9BD92BE89AAE001CFF7F /* ChartsList.swift in Sources */,
 				9E4473DF2BDFB26F0028DD5B /* Array+Ext.swift in Sources */,
 				9E728AB62BD3AD9E0045FF15 /* Date+Ext.swift in Sources */,
 				9E4473E52BDFDC8D0028DD5B /* DashboardTopBar.swift in Sources */,
@@ -453,6 +488,7 @@
 				9E728AA62BD391AF0045FF15 /* URLRequest+Ext.swift in Sources */,
 				9E728A8D2BD368AC0045FF15 /* API.swift in Sources */,
 				9E728AAE2BD393AF0045FF15 /* DashboardValueResponse.swift in Sources */,
+				9E9C9BDB2BE8A042001CFF7F /* ChartsListType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

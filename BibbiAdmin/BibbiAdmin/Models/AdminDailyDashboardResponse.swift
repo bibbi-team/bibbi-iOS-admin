@@ -23,18 +23,26 @@ extension AdminDailyDashboardResponse: Identifiable {
 extension AdminDailyDashboardResponse: Equatable { }
 
 extension AdminDailyDashboardResponse {
-    var dailyMemberValues: [DailyValueResponse]? {
+    typealias ValueComparator = (DailyValueResponse, DailyValueResponse) -> Bool
+    
+    func dailyMemberValues(
+        _ k: Int = Int.max,
+        by comparator: ValueComparator = { $0.date < $1.date }
+    ) -> [DailyValueResponse]? {
         return dailyMemberRegistration
             .toDailyValueResponse()
-            .sorted { $0.date < $1.date }
-            .last(7)
+            .sorted(by: comparator)
+            .last(k)
     }
     
-    var dailyPostValues: [DailyValueResponse]? {
+    func dailyPostValues(
+        _ k: Int = Int.max,
+        by comparator: ValueComparator = { $0.date < $1.date }
+    ) -> [DailyValueResponse]? {
         return dailyPostCreation
             .toDailyValueResponse()
-            .sorted { $0.date < $1.date }
-            .last(7)
+            .sorted(by: comparator)
+            .last(k)
     }
 }
 

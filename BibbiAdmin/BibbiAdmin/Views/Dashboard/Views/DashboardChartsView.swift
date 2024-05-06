@@ -37,6 +37,15 @@ struct DashboardChartsView: View {
                 Text(type.title)
                     .font(.system(size: 12))
                     .foregroundStyle(Color.gray200)
+                
+                Spacer()
+                
+                Button {
+                    store.send(.listButtonTapped)
+                } label: {
+                    Image(systemName: "list.bullet")
+                }
+
             }
             
             if let values = store.values {
@@ -172,7 +181,7 @@ struct DashboardChartsView: View {
             initialState:
                 DashboardCharts.State(
                     values: AdminDailyDashboardResponse.mock
-                        .dailyMemberValues
+                        .dailyMemberValues()
                 )
         ) {
             DashboardCharts()

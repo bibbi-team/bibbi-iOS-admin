@@ -115,13 +115,36 @@ struct DashboardView: View {
                     }
                 }
             }
-            .onAppear {
-                store.send(.onAppear)
-            }
             .padding(.horizontal, 40)
             .safeAreaPadding(.vertical)
         }
+        .sheet(
+            item: $store.scope(state: \.dailyMemberList, action: \.dailyMemberList)
+        ) { store in
+            ChartsListView(
+                store: store,
+                of: .member
+            )
+            .frame(width: 600, height: 500)
+        }
+        .sheet(
+            item: $store.scope(state: \.dailyPostList, action: \.dailyPostList)
+        ) { store in
+            ChartsListView(
+                store: store,
+                of: .post
+            )
+            .frame(width: 600, height: 500)
+        }
+        .onAppear {
+            store.send(.onAppear)
+        }
     }
+}
+
+// MARK: - Extensions
+extension DashboardView {
+    
 }
 
 // MARK: - Preview

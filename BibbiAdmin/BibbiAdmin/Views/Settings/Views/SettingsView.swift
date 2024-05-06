@@ -14,9 +14,9 @@ struct SettingsView: View {
     let store: StoreOf<DashboardSettings>
     
     // MARK: - Properties
-    let kimsowolGitHubURL = URL(string: "https://github.com/rlarjsdn3")
-    let kimdohyunGitHubURL = URL(string: "https://github.com/Do-hyun-Kim")
-    let makyungmiGitHubURL = URL(string: "https://github.com/akrudal")
+    let kimsowolGitHubURL = URL(string: "https://github.com/rlarjsdn3")!
+    let kimdohyunGitHubURL = URL(string: "https://github.com/Do-hyun-Kim")!
+    let makyungmiGitHubURL = URL(string: "https://github.com/akrudal")!
     
     // MARK: - Body
     var body: some View {
@@ -25,7 +25,7 @@ struct SettingsView: View {
                 Section {
                     RowLabel(
                         "버전",
-                        text: "\(Bundle.main.version)",
+                        text: "\(Bundle.main.version) Beta 1",
                         tintColor: Color.red,
                         systemName: "leaf.circle.fill"
                     )
@@ -42,17 +42,17 @@ struct SettingsView: View {
                 Section {
                     RowLink(
                         "김소월",
-                        url: kimsowolGitHubURL!,
+                        url: kimsowolGitHubURL,
                         tintColor: Color.green
                     )
                     RowLink(
                         "김도현",
-                        url: kimdohyunGitHubURL!,
+                        url: kimdohyunGitHubURL,
                         tintColor: Color.orange
                     )
                     RowLink(
                         "마경미",
-                        url: makyungmiGitHubURL!,
+                        url: makyungmiGitHubURL,
                         tintColor: Color.red
                     )
                 } header: {
