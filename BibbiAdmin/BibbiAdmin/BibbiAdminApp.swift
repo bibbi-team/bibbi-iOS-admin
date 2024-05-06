@@ -32,10 +32,12 @@ struct BibbiAdminApp: App {
                 #if os(macOS)
                 .frame(
                     minWidth: windowWidthSize,
-                    maxWidth: windowWidthSize
+                    maxWidth: windowWidthSize,
+                    minHeight: windowWidthSize
                 )
                 #endif
                 .background(Color.bibbiBlack)
+                .preferredColorScheme(.dark)
         }
         #if os(macOS)
         .commands {
