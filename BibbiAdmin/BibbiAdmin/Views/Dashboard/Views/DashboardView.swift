@@ -113,6 +113,19 @@ struct DashboardView: View {
                         ChartsPlaceholderView()
                             .roundedBoxStyle(height: 288)
                     }
+                    
+                    VStack(spacing: 12) {
+                        Text("마지막 업데이트 시간: \(store.refreshDate.toFormatString(.yyyyMDHMS))")
+                            .font(.system(size: 14))
+                            .foregroundStyle(Color.secondary)
+                        Button("새로고침") {
+                            store.send(.refresh)
+                        }
+                        #if os(iOS)
+                        .tint(Color.mainYellow)
+                        #endif
+                    }
+                    .padding(.top)
                 }
             }
             .padding(.horizontal, 40)

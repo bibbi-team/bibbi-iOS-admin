@@ -19,6 +19,8 @@ struct Dashboard {
     struct State: Equatable {
         var endDate: Date = Date._now
         var startDate: Date = Date._20240110
+        
+        var refreshDate: Date = Date._now
     
         var dailyMember: [DailyValueResponse]?
         var dailyPost: [DailyValueResponse]?
@@ -68,6 +70,7 @@ struct Dashboard {
                 state.dashboardValue = nil
                 state.dashboardDailyMember = nil
                 state.dashboardDailyPost = nil
+                state.refreshDate = Date._now
                 return .merge(
                     .send(.fetchDashboardResponse),
                     .send(.fetchDailyDashboardResponse)
