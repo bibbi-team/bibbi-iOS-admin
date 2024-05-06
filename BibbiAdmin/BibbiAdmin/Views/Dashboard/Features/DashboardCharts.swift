@@ -27,6 +27,7 @@ struct DashboardCharts {
     // MARK: - Action
     enum Action: BindableAction {
         case binding(BindingAction<State>)
+        case listButtonTapped
     }
     
     // MARK: - Reducer
@@ -46,6 +47,9 @@ struct DashboardCharts {
                 return .none
                 
             case .binding:
+                return .none
+                
+            case .listButtonTapped:
                 return .none
             }
         }

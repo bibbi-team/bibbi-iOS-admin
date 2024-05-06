@@ -17,7 +17,7 @@ extension String {
 
 extension BibbiNetworkString {
     static var appKey = "7c5aaa36-570e-491f-b18a-26a1a0b72959"
-    static var xAuthToken = "eyJ0eXBlIjoiYWNjZXNzIiwiYWxnIjoiSFMyNTYiLCJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNzE0NjQ5Njk4Mjc2fQ.eyJ1c2VySWQiOiJmZWQiLCJleHAiOjE3MTQ3MzYwOTh9.NAcC_honq-EPlrqUN0J1JXVdYD-d1U8zHlwKrtI7L-g"
+    static var xAuthToken = "eyJ0eXBlIjoiYWNjZXNzIiwiYWxnIjoiSFMyNTYiLCJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNzE0OTcyNDk3NjcyfQ.eyJ1c2VySWQiOiLjhYfjhYLjhYgiLCJleHAiOjE3MTUwNTg4OTd9.hUKtNujBXyO_ehseL64PwS-K_2WbDryAYMYfCCcWyUo"
 }
 
 extension BibbiUserInterfaceString {

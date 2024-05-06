@@ -66,3 +66,20 @@ extension Date {
         return calendar.date(byAdding: .day, value: 1, to: self)!
     }
 }
+
+extension Date {
+    static var _now: Date {
+        return Date()
+    }
+    
+    static var _20240110: Date {
+        let dateComponents = DateComponents(
+            year: 2024,
+            month: 1,
+            day: 10
+        )
+        return Calendar.current.date(
+            from: dateComponents
+        )!
+    }
+}

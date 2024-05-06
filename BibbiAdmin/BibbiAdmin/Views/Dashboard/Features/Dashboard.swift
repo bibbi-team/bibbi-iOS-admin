@@ -11,12 +11,21 @@ import Foundation
 @Reducer
 struct Dashboard {
     
+    // MARK: - Properties
+    static let xAxisLength = 7
+    
     // MARK: - State
     @ObservableState
     struct State: Equatable {
-        var endDate: Date = Date()
-        var startDate: Date = Date().addingTimeInterval(-50 * 86_400)
+        var endDate: Date = Date._now
+        var startDate: Date = Date._20240110
     
+        var dailyMember: [DailyValueResponse]?
+        var dailyPost: [DailyValueResponse]?
+        
+        @Presents var dailyMemberList: ChartsList.State?
+        @Presents var dailyPostList: ChartsList.State?
+        
         var dashboardTopBar: DashboardTopBar.State?
         var dashboardValue: DashboardValue.State?
         var dashboardDailyMember: DashboardCharts.State?
@@ -31,6 +40,9 @@ struct Dashboard {
         case dashboardResponse(AdminDashboardResponse)
         case fetchDailyDashboardResponse
         case dailyDashboardResponse(AdminDailyDashboardResponse)
+        
+        case dailyMemberList(PresentationAction<ChartsList.Action>)
+        case dailyPostList(PresentationAction<ChartsList.Action>)
         
         case dashboardTopBar(DashboardTopBar.Action)
         case dashboardValue(DashboardValue .Action)
@@ -95,11 +107,26 @@ struct Dashboard {
                 }
                 
             case let.dailyDashboardResponse(response):
+                state.dailyPost = response.dailyPostValues { $0.date > $1.date }
+                state.dailyMember = response.dailyMemberValues { $0.date > $1.date }
+                
                 state.dashboardDailyMember = DashboardCharts.State(
-                    values: response.dailyMemberValues
+                    values: response.dailyMemberValues(Dashboard.xAxisLength)
                 )
                 state.dashboardDailyPost = DashboardCharts.State(
-                    values: response.dailyPostValues
+                    values: response.dailyPostValues(Dashboard.xAxisLength)
+                )
+                return .none
+                
+            case .dashboardDailyMember(.listButtonTapped):
+                state.dailyMemberList = ChartsList.State(
+                    values: state.dailyMember
+                )
+                return .none
+                
+            case .dashboardDailyPost(.listButtonTapped):
+                state.dailyPostList = ChartsList.State(
+                    values: state.dailyPost
                 )
                 return .none
                 
@@ -107,6 +134,10 @@ struct Dashboard {
                  .dashboardValue,
                  .dashboardDailyMember,
                  .dashboardDailyPost:
+                return .none
+                
+            case .dailyMemberList,
+                 .dailyPostList:
                 return .none
             }
         }
@@ -121,6 +152,12 @@ struct Dashboard {
         }
         .ifLet(\.dashboardDailyPost, action: \.dashboardDailyPost) {
             DashboardCharts()
+        }
+        .ifLet(\.$dailyMemberList, action: \.dailyMemberList) {
+            ChartsList()
+        }
+        .ifLet(\.$dailyPostList, action: \.dailyPostList) {
+            ChartsList()
         }
     }
 }
