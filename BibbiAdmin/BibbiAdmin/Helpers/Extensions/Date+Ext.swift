@@ -10,14 +10,20 @@ import Foundation
 extension Date {
     enum CustomFormatStyle {
         case MDd
+        case yyyyMD
         case dashYyyyMmDd
+        case yyyyMDHMS
         
         var string: String {
             switch self {
             case .MDd:
                 return "M.dd"
+            case .yyyyMD:
+                return "yyyy년 M월 d일"
             case .dashYyyyMmDd:
                 return "yyyy-MM-dd"
+            case .yyyyMDHMS:
+                return "yyyy년 M월 d일 H:m:s"
             }
         }
     }

@@ -53,6 +53,8 @@
 		9E9C9BD72BE89A9E001CFF7F /* ChartsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C9BD62BE89A9E001CFF7F /* ChartsListView.swift */; };
 		9E9C9BD92BE89AAE001CFF7F /* ChartsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C9BD82BE89AAE001CFF7F /* ChartsList.swift */; };
 		9E9C9BDB2BE8A042001CFF7F /* ChartsListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C9BDA2BE8A042001CFF7F /* ChartsListType.swift */; };
+		9E9C9BDD2BE8D172001CFF7F /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C9BDC2BE8D172001CFF7F /* Color+Ext.swift */; };
+		9E9C9BDF2BE8D20A001CFF7F /* Developers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C9BDE2BE8D20A001CFF7F /* Developers.swift */; };
 		9EE7DB0A2BE48FA50060CD3D /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7DB092BE48FA50060CD3D /* Shimmer.swift */; };
 		9EE7DB0D2BE498360060CD3D /* ValueBoxPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7DB0C2BE498360060CD3D /* ValueBoxPlaceholderView.swift */; };
 		9EE7DB0F2BE49B970060CD3D /* ChartsPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7DB0E2BE49B970060CD3D /* ChartsPlaceholderView.swift */; };
@@ -103,6 +105,8 @@
 		9E9C9BD62BE89A9E001CFF7F /* ChartsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsListView.swift; sourceTree = "<group>"; };
 		9E9C9BD82BE89AAE001CFF7F /* ChartsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsList.swift; sourceTree = "<group>"; };
 		9E9C9BDA2BE8A042001CFF7F /* ChartsListType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsListType.swift; sourceTree = "<group>"; };
+		9E9C9BDC2BE8D172001CFF7F /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
+		9E9C9BDE2BE8D20A001CFF7F /* Developers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Developers.swift; sourceTree = "<group>"; };
 		9EE7DB092BE48FA50060CD3D /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
 		9EE7DB0C2BE498360060CD3D /* ValueBoxPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueBoxPlaceholderView.swift; sourceTree = "<group>"; };
 		9EE7DB0E2BE49B970060CD3D /* ChartsPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsPlaceholderView.swift; sourceTree = "<group>"; };
@@ -229,6 +233,7 @@
 		9E728A852BD368460045FF15 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9E9C9BDE2BE8D20A001CFF7F /* Developers.swift */,
 				9E728A862BD368750045FF15 /* AdminDashboardResponse.swift */,
 				9E728AAD2BD393AF0045FF15 /* DashboardValueResponse.swift */,
 				9E728AAF2BD393BE0045FF15 /* DashboardDistributionResponse.swift */,
@@ -248,6 +253,7 @@
 				9E3DDE962BDD47540003C234 /* Dictionary+Ext.swift */,
 				9E4473DE2BDFB26F0028DD5B /* Array+Ext.swift */,
 				9E5A9B652BE3DE1C0020E9CC /* Bundle+Ext.swift */,
+				9E9C9BDC2BE8D172001CFF7F /* Color+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -461,6 +467,7 @@
 				9E728A942BD36FC00045FF15 /* BibbiString.swift in Sources */,
 				9E3DDE972BDD47540003C234 /* Dictionary+Ext.swift in Sources */,
 				9E728A812BD368140045FF15 /* DashboardView.swift in Sources */,
+				9E9C9BDF2BE8D20A001CFF7F /* Developers.swift in Sources */,
 				9E544FE32BDBCEC000212FF6 /* RoundedBox.swift in Sources */,
 				9E728A712BD367510045FF15 /* BibbiAdminApp.swift in Sources */,
 				9E728B532BDA0AF60045FF15 /* Dashboard.swift in Sources */,
@@ -487,6 +494,7 @@
 				9E728ABB2BD3ECE00045FF15 /* DashboardTopBarView.swift in Sources */,
 				9E728AA62BD391AF0045FF15 /* URLRequest+Ext.swift in Sources */,
 				9E728A8D2BD368AC0045FF15 /* API.swift in Sources */,
+				9E9C9BDD2BE8D172001CFF7F /* Color+Ext.swift in Sources */,
 				9E728AAE2BD393AF0045FF15 /* DashboardValueResponse.swift in Sources */,
 				9E9C9BDB2BE8A042001CFF7F /* ChartsListType.swift in Sources */,
 			);

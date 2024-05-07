@@ -13,25 +13,20 @@ struct SettingsView: View {
     // MARK: - Store
     let store: StoreOf<DashboardSettings>
     
-    // MARK: - Properties
-    let kimsowolGitHubURL = URL(string: "https://github.com/rlarjsdn3")!
-    let kimdohyunGitHubURL = URL(string: "https://github.com/Do-hyun-Kim")!
-    let makyungmiGitHubURL = URL(string: "https://github.com/akrudal")!
-    
     // MARK: - Body
     var body: some View {
         NavigationStack {
             Form {
                 Section {
-                    RowLabel(
-                        "버전",
-                        text: "\(Bundle.main.version) Beta 1",
+                    labelRow(
+                        title: "버전",
+                        subTitle: "\(Bundle.main.version) (Beta 1)",
                         tintColor: Color.red,
                         systemName: "leaf.circle.fill"
                     )
-                    RowLabel(
-                        "빌드",
-                        text: "\(Bundle.main.buildNumber)",
+                    labelRow(
+                        title: "빌드",
+                        subTitle: "\(Bundle.main.buildNumber)",
                         tintColor: Color.blue,
                         systemName: "sun.max.fill"
                     )
@@ -40,21 +35,14 @@ struct SettingsView: View {
                 }
                 
                 Section {
-                    RowLink(
-                        "김소월",
-                        url: kimsowolGitHubURL,
-                        tintColor: Color.green
-                    )
-                    RowLink(
-                        "김도현",
-                        url: kimdohyunGitHubURL,
-                        tintColor: Color.orange
-                    )
-                    RowLink(
-                        "마경미",
-                        url: makyungmiGitHubURL,
-                        tintColor: Color.red
-                    )
+                    ForEach(Developers.model) { developer in
+                        labelRow(
+                            title: developer.name,
+                            subTitle: developer.position.rawValue,
+                            tintColor: Color.random,
+                            systemName: developer.position.systemName
+                        )
+                    }
                 } header: {
                     Text("개발자")
                 }
@@ -66,15 +54,17 @@ struct SettingsView: View {
     
     // MARK: - ViewBuilders
     @ViewBuilder
-    func RowLabel(
-        _ title: String? = nil,
-        text: String? = nil,
+    func labelRow(
+        title: String,
+        subTitle: String,
         tintColor: Color = .primary,
         systemName: String?
     ) -> some View {
         HStack {
             if let name = systemName {
                 Image(systemName: name)
+                    .resizable()
+                    .frame(width: 15, height: 15)
                     .padding(5)
                     .background(
                         tintColor,
@@ -83,30 +73,13 @@ struct SettingsView: View {
                     #if os(iOS)
                     .foregroundStyle(Color.white)
                     #endif
+                    .padding(.vertical, 5)
+                    .padding(.horizontal, 3)
             }
-            Text(title ?? "")
+            Text(title)
             Spacer()
-            Text(text ?? "")
+            Text(subTitle)
                 .foregroundStyle(Color.secondary)
-        }
-    }
-    
-    @ViewBuilder
-    func RowLink(
-        _ title: String? = nil,
-        url: URL,
-        tintColor: Color
-    ) -> some View {
-        HStack {
-            RowLabel(
-                title,
-                tintColor: tintColor,
-                systemName: "heart.fill"
-            )
-            Spacer()
-            Link(
-                "GitHub",
-                destination: url)
         }
     }
 }

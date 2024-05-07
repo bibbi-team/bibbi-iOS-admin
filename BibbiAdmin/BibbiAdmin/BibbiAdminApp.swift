@@ -42,6 +42,22 @@ struct BibbiAdminApp: App {
         #if os(macOS)
         .commands {
             CommandMenu("대시보드") {
+                Button("일별 가입자 수 추이 보기") {
+                    if let store = BibbiAdminApp.dashboardStore.scope(state: \.dashboardDailyMember, action: \.dashboardDailyMember) {
+                        store.send(.listButtonTapped)
+                    }
+                }
+                .keyboardShortcut("m", modifiers: .command)
+                
+                Button("일별 게시물 수 추이 보기") {
+                    if let store = BibbiAdminApp.dashboardStore.scope(state: \.dashboardDailyPost, action: \.dashboardDailyPost) {
+                        store.send(.listButtonTapped)
+                    }
+                }
+                .keyboardShortcut("p", modifiers: .command)
+                
+                Divider()
+                
                 Button("새로고침") {
                     BibbiAdminApp.dashboardStore.send(.refresh)
                 }

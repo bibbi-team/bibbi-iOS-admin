@@ -16,22 +16,6 @@ struct DashboardValueBoxView: View {
     // MARK: - Properties
     let type: DashboardValueType
     
-    // MARK: - Computed Properties
-    var value: DashboardValueResponse? {
-        switch type {
-        case .totalMember:
-            return store.value?.totalMember
-        case .totalFamily:
-            return store.value?.totalFamily
-        case .totalPost:
-            return store.value?.totalPost
-        case .totalComment:
-            return store.value?.totalComment
-        case .totalReaction:
-            return store.value?.totalReaction
-        }
-    }
-    
     // MARK: - Intializer
     init(
         store: StoreOf<DashboardValue>,
@@ -44,7 +28,7 @@ struct DashboardValueBoxView: View {
     // MARK: - Body
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
-            if let value = value {
+            if let value = store.state.value(of: type) {
                 HStack(spacing: 3) {
                     Image(type.resource)
                         .resizable()

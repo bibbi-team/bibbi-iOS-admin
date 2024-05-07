@@ -47,7 +47,7 @@ struct ChartsListView: View {
                     Section {
                         ForEach(Array(zip(values.indices, values)), id: \.0) { (index, value) in
                             HStack {
-                                Text(value.date.toFormatString(.dashYyyyMmDd))
+                                Text(value.date.toFormatString(.yyyyMD))
                                 Spacer()
                                 Text("\(value.count)")
                                     .fontWeight(.semibold)
