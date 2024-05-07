@@ -15,6 +15,14 @@ struct DashboardTopBarView: View {
     
     // MARK: - Body
     var body: some View {
+        topBar
+            .padding(.horizontal, 40)
+    }
+}
+
+// MARK: - Extensions
+extension DashboardTopBarView {
+    var topBar: some View {
         HStack {
             Image(.logo)
                 .resizable()
@@ -31,7 +39,6 @@ struct DashboardTopBarView: View {
                 .font(.system(size: 24, weight: .black, design: .rounded))
                 .foregroundStyle(Color.bibbiWhite)
         }
-        .padding(.horizontal, 40)
     }
 }
 

@@ -15,44 +15,10 @@ struct SettingsView: View {
     
     // MARK: - Body
     var body: some View {
-        NavigationStack {
-            Form {
-                Section {
-                    labelRow(
-                        title: "버전",
-                        subTitle: "\(Bundle.main.version) (Beta 1)",
-                        tintColor: Color.red,
-                        systemName: "leaf.circle.fill"
-                    )
-                    labelRow(
-                        title: "빌드",
-                        subTitle: "\(Bundle.main.buildNumber)",
-                        tintColor: Color.blue,
-                        systemName: "sun.max.fill"
-                    )
-                } header: {
-                    Text("앱 정보")
-                }
-                
-                Section {
-                    ForEach(Developers.model) { developer in
-                        labelRow(
-                            title: developer.name,
-                            subTitle: developer.position.rawValue,
-                            tintColor: Color.random,
-                            systemName: developer.position.systemName
-                        )
-                    }
-                } header: {
-                    Text("개발자")
-                }
-            }
-            .formStyle(.grouped)
-            .navigationTitle("설정")
-        }
+        settings
     }
     
-    // MARK: - ViewBuilders
+    // MARK: - Helpers
     @ViewBuilder
     func labelRow(
         title: String,
@@ -84,6 +50,56 @@ struct SettingsView: View {
     }
 }
 
+// MARK: - Extensions
+extension SettingsView {
+    var settings: some View {
+        NavigationStack {
+            Form {
+                appInfoSection
+                
+                developersSection
+            }
+            .formStyle(.grouped)
+            .navigationTitle("설정")
+        }
+    }
+    
+    var appInfoSection: some View {
+        Section {
+            labelRow(
+                title: "버전",
+                subTitle: "\(Bundle.main.version) (Beta 1)",
+                tintColor: Color.red,
+                systemName: "leaf.circle.fill"
+            )
+            labelRow(
+                title: "빌드",
+                subTitle: "\(Bundle.main.buildNumber)",
+                tintColor: Color.blue,
+                systemName: "sun.max.fill"
+            )
+        } header: {
+            Text("앱 정보")
+        }
+    }
+    
+    var developersSection: some View {
+        Section {
+            ForEach(Developers.model) { developer in
+                labelRow(
+                    title: developer.name,
+                    subTitle: developer.position.rawValue,
+                    tintColor: Color.random,
+                    systemName: developer.position.systemName
+                )
+            }
+        } header: {
+            Text("개발자")
+        }
+    }
+}
+
+// MARK: - Preview
 #Preview {
     SettingsView(
         store: StoreOf<DashboardSettings>(initialState: DashboardSettings.State()) {
