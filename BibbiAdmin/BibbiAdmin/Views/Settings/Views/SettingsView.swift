@@ -39,14 +39,16 @@ struct SettingsView: View {
                     #if os(iOS)
                     .foregroundStyle(Color.white)
                     #endif
-                    .padding(.vertical, 5)
-                    .padding(.horizontal, 3)
             }
             Text(title)
             Spacer()
             Text(subTitle)
                 .foregroundStyle(Color.secondary)
         }
+        #if os(macOS)
+        .padding(.vertical, 0)
+        .padding(.horizontal, 3)
+        #endif
     }
 }
 
@@ -85,7 +87,7 @@ extension SettingsView {
     
     var developersSection: some View {
         Section {
-            ForEach(Developers.model) { developer in
+            ForEach(Developer.models) { developer in
                 labelRow(
                     title: developer.name,
                     subTitle: developer.position.rawValue,
