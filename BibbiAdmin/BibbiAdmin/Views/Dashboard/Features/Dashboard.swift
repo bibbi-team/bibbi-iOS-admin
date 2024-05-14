@@ -27,6 +27,8 @@ struct Dashboard {
         
         @Presents var dailyMemberList: ChartsList.State?
         @Presents var dailyPostList: ChartsList.State?
+        @Presents var easterEgg: EasterEgg.State?
+        @Presents var dashboardSettings: DashboardSettings.State?
         
         var dashboardTopBar: DashboardTopBar.State?
         var dashboardValue: DashboardValue.State?
@@ -43,8 +45,12 @@ struct Dashboard {
         case fetchDailyDashboardResponse
         case dailyDashboardResponse(AdminDailyDashboardResponse)
         
+        case settingsButtonTapped
+        
         case dailyMemberList(PresentationAction<ChartsList.Action>)
         case dailyPostList(PresentationAction<ChartsList.Action>)
+        case easterEgg(PresentationAction<EasterEgg.Action>)
+        case dashboardSettings(PresentationAction<DashboardSettings.Action>)
         
         case dashboardTopBar(DashboardTopBar.Action)
         case dashboardValue(DashboardValue .Action)
@@ -121,6 +127,12 @@ struct Dashboard {
                 )
                 return .none
                 
+            case .dashboardTopBar(.bibbiLogoTapped):
+                state.easterEgg = EasterEgg.State(
+                    poem: Poem.models.randomElement()
+                )
+                return .none
+                
             case .dashboardDailyMember(.listButtonTapped):
                 state.dailyMemberList = ChartsList.State(
                     values: state.dailyMember
@@ -133,6 +145,10 @@ struct Dashboard {
                 )
                 return .none
                 
+            case .settingsButtonTapped:
+                state.dashboardSettings = DashboardSettings.State()
+                return .none
+                
             case .dashboardTopBar,
                  .dashboardValue,
                  .dashboardDailyMember,
@@ -141,6 +157,10 @@ struct Dashboard {
                 
             case .dailyMemberList,
                  .dailyPostList:
+                return .none
+                
+            case .dashboardSettings,
+                 .easterEgg:
                 return .none
             }
         }
@@ -161,6 +181,9 @@ struct Dashboard {
         }
         .ifLet(\.$dailyPostList, action: \.dailyPostList) {
             ChartsList()
+        }
+        .ifLet(\.$easterEgg, action: \.easterEgg) {
+            EasterEgg()
         }
     }
 }

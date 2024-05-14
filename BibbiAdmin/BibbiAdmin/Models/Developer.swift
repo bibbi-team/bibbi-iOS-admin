@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct Developers {
+struct Developer {
     var name: String
     var position: Position
 }
 
-extension Developers {
+extension Developer {
     enum `Position`: String {
         case ios = "iOS"
         case backend = "Server"
@@ -31,13 +31,13 @@ extension Developers {
     }
 }
 
-extension Developers: Identifiable {
+extension Developer: Identifiable {
     var id: UUID { UUID() }
 }
 
 // MARK: - Model
-extension Developers {
-    static let model = [
+extension Developer {
+    static let models = [
         Self(
             name: "김소월",
             position: .ios

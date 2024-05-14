@@ -38,6 +38,21 @@ struct DashboardView: View {
                 .frame(width: 600, height: 500)
                 #endif
             }
+            .sheet(
+                item: $store.scope(state: \.easterEgg, action: \.easterEgg)
+            ) { store in
+                EasterEggView(
+                    store: store
+                )
+                #if os(macOS)
+                .frame(width: 600, height: 500)
+                #endif
+            }
+            .sheet(
+                item: $store.scope(state: \.dashboardSettings, action: \.dashboardSettings)
+            ) { store in
+                SettingsView(store: store)
+            }
             .onAppear {
                 store.send(.onAppear)
             }
@@ -214,6 +229,21 @@ extension DashboardView {
             #endif
         }
         .padding(.vertical)
+        .frame(maxWidth: .infinity)
+        #if os(iOS)
+        .overlay(alignment: .topTrailing) {
+            Button {
+                store.send(.settingsButtonTapped)
+            } label: {
+                Image(systemName: "gear")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .tint(Color.gray400)
+            }
+            .padding(.top, 15)
+            .padding(.trailing, 10)
+        }
+        #endif
     }
 }
 

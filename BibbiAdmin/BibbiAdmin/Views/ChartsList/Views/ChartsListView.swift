@@ -43,7 +43,7 @@ extension ChartsListView {
     var chartsListView: some View {
         VStack {
             topBar
-                .padding(.horizontal)
+                .padding(.horizontal, 18)
                 .padding(.top, 12)
                 .padding(.bottom, 6)
             
@@ -55,16 +55,15 @@ extension ChartsListView {
     var topBar: some View {
         HStack {
             Text(type.title)
-                .font(.system(size: 14, weight: .bold))
+                .font(.system(size: 16, weight: .bold))
                 .foregroundStyle(Color.bibbiWhite)
             
             Spacer()
             
+            #if os(macOS)
             Button("닫기") {
                 store.send(.dismiss)
             }
-            #if os(iOS)
-            .foregroundStyle(Color.mainYellow)
             #endif
         }
     }

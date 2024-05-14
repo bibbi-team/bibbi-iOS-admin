@@ -21,6 +21,7 @@ struct DashboardTopBar {
     enum Action: BindableAction {
         case binding(BindingAction<State>)
         case refreshButtonTapped
+        case bibbiLogoTapped
     }
     
     // MARK: - Reducer
@@ -32,6 +33,9 @@ struct DashboardTopBar {
                 return .none
                 
             case .refreshButtonTapped:
+                return .none
+                
+            case .bibbiLogoTapped:
                 return .none
             }
         }

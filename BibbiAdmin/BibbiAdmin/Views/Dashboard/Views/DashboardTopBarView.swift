@@ -28,6 +28,10 @@ extension DashboardTopBarView {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 25, height: 25)
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    store.send(.bibbiLogoTapped)
+                }
             
             Text(BibbiUserInterfaceString.dashboard)
                 .font(.system(size: 24, weight: .black, design: .rounded))
