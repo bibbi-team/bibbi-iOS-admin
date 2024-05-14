@@ -390,9 +390,9 @@
 		9EE7DB082BE482DE0060CD3D /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				9E9C9BDA2BE8A042001CFF7F /* ChartsListType.swift */,
 				9E6447FD2BDAA42D005446BA /* DashboardValueType.swift */,
 				9E5A9B512BE3B70F0020E9CC /* DashboardChartsType.swift */,
-				9E9C9BDA2BE8A042001CFF7F /* ChartsListType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -663,6 +663,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BibbiAdmin/Preview Content\"";
@@ -701,6 +702,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BibbiAdmin/Preview Content\"";
