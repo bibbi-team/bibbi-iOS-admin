@@ -32,7 +32,7 @@ enum AdminAPI {
         var value: String {
             switch self {
             case .xAppKey:
-                return "\(BibbiNetworkString.appKey)"
+                return "\(Bundle.main.xAppKey)"
             case let .xAuthToken(token):
                 return "\(token)"
             case .contentJson:
@@ -41,7 +41,7 @@ enum AdminAPI {
         }
         
         static var baseHeaders: [Self] {
-            [.contentJson, .xAppKey, .xAuthToken(token: BibbiNetworkString.xAuthToken)]
+            [.contentJson, .xAppKey, .xAuthToken(token: "")]
         }
     }
 }

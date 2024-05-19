@@ -70,7 +70,7 @@ extension SettingsView {
         Section {
             labelRow(
                 title: "버전",
-                subTitle: "\(Bundle.main.version) (Beta 1)",
+                subTitle: "\(Bundle.main.version)",
                 tintColor: Color.red,
                 systemName: "leaf.circle.fill"
             )
