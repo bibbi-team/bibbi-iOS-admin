@@ -33,13 +33,13 @@ extension DashboardTopBarView {
                     store.send(.bibbiLogoTapped)
                 }
             
-            Text(BibbiUserInterfaceString.dashboard)
+            Text(BibbiString.dashboard)
                 .font(.system(size: 24, weight: .black, design: .rounded))
                 .foregroundStyle(Color.bibbiWhite)
             
             Spacer()
             
-            Text(BibbiUserInterfaceString.bibbi)
+            Text(BibbiString.bibbi)
                 .font(.system(size: 24, weight: .black, design: .rounded))
                 .foregroundStyle(Color.bibbiWhite)
         }

@@ -64,6 +64,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E13150E2BFA0E75007D1932 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		9E2C67152BEA51C50078B903 /* EasterEggView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasterEggView.swift; sourceTree = "<group>"; };
 		9E2C67182BEA51D20078B903 /* EasterEgg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasterEgg.swift; sourceTree = "<group>"; };
 		9E2C671A2BEB07510078B903 /* Poem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poem.swift; sourceTree = "<group>"; };
@@ -116,6 +117,8 @@
 		9EE7DB092BE48FA50060CD3D /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
 		9EE7DB0C2BE498360060CD3D /* ValueBoxPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueBoxPlaceholderView.swift; sourceTree = "<group>"; };
 		9EE7DB0E2BE49B970060CD3D /* ChartsPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsPlaceholderView.swift; sourceTree = "<group>"; };
+		9EF800082BF3B5780078D70D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9EF800092BF3C03B0078D70D /* BibbiAdmin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BibbiAdmin.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,12 +225,15 @@
 		9E728A6F2BD367510045FF15 /* BibbiAdmin */ = {
 			isa = PBXGroup;
 			children = (
+				9EF800092BF3C03B0078D70D /* BibbiAdmin.entitlements */,
+				9EF800082BF3B5780078D70D /* Info.plist */,
 				9E728A702BD367510045FF15 /* BibbiAdminApp.swift */,
 				9E728AA82BD392150045FF15 /* Helpers */,
 				9E728A8B2BD368980045FF15 /* API */,
 				9E728A852BD368460045FF15 /* Models */,
 				9E728A7E2BD367F40045FF15 /* Views */,
 				9E728A742BD367530045FF15 /* Assets.xcassets */,
+				9E13150E2BFA0E75007D1932 /* Config.xcconfig */,
 				9E728A762BD367530045FF15 /* Preview Content */,
 			);
 			path = BibbiAdmin;
@@ -660,21 +666,26 @@
 		};
 		9E728A7C2BD367530045FF15 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E13150E2BFA0E75007D1932 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = BibbiAdmin/BibbiAdmin.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 20240519;
 				DEVELOPMENT_ASSET_PATHS = "\"BibbiAdmin/Preview Content\"";
 				DEVELOPMENT_TEAM = P9P4WJ623F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BibbiAdmin/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "삐삐 대시보드";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17;
@@ -683,14 +694,13 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bibbiAdmin;
-				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = com.bibbiAdmin.ios;
-				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = com.bibbiAdmin.mac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -699,21 +709,26 @@
 		};
 		9E728A7D2BD367530045FF15 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E13150E2BFA0E75007D1932 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = BibbiAdmin/BibbiAdmin.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 20240519;
 				DEVELOPMENT_ASSET_PATHS = "\"BibbiAdmin/Preview Content\"";
 				DEVELOPMENT_TEAM = P9P4WJ623F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BibbiAdmin/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "삐삐 대시보드";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17;
@@ -722,14 +737,13 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bibbiAdmin;
-				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = com.bibbiAdmin.ios;
-				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = com.bibbiAdmin.mac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
